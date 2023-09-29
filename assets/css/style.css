@@ -73,19 +73,19 @@ ul {
     margin-right: 150px;
 }
 
-#player_rock_button {
+#player_slot_1 {
     background-color: white;
     border: solid grey 1px;
     border-radius: 5px;
 }
 
-#player_paper_button {
+#player_slot_2 {
     background-color: white;
     border: solid grey 1px;
     border-radius: 5px;
 }
 
-#player_scissors_button {
+#player_slot_3 {
     background-color: white;
     border: solid grey 1px;
     border-radius: 5px;
@@ -96,19 +96,19 @@ ul {
     margin-right: 100px;
 }
 
-#cpu_rock_button {
+#cpu_slot_1 {
     background-color: white;
     border: solid grey 1px;
     border-radius: 5px;
 }
 
-#cpu_paper_button {
+#cpu_slot_2 {
     background-color: white;
     border: solid grey 1px;
     border-radius: 5px;
 }
 
-#cpu_scissors_button {
+#cpu_slot_3 {
     background-color: white;
     border: solid grey 1px;
     border-radius: 5px;

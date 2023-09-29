@@ -67,20 +67,6 @@ let scissors = "scissors";
 let announce = document.getElementById('announcement_board');
 
 let gameMatchPronoun = "th";
-function updatePronoun() {
-if (gameMatchCount == 1) {
-    gameMatchPronoun = 'st';
-} else if (gameMatchCount == 2) {
-    gameMatchPronoun = 'nd';
-} else if (gameMatchCount == 3) {
-    gameMatchPronoun = 'rd';
-} else if (gameMatchCount >= 4) {
-    gameMatchPronoun = 'th';
-} else {
-    console.log('error: failed to update gameMatchPronoun function');
-}
-console.log("Cuttent game-match: " + gameMatchCount + gameMatchPronoun);
-}
 updatePronoun();
 
 // showing either < > = depending on who wins. Icon is updated by the addScoreTo() function
@@ -101,8 +87,23 @@ console.log("cpuHighlight: " + cpuHighlight);
 let cpuHighlightRock = document.getElementById("cpu_slot_1");
 let cpuHighlightPaper = document.getElementById("cpu_slot_2");
 let cpuHighlightScissors = document.getElementById("cpu_slot_3");
-var cpuScoreboard = 0;
+let cpuScoreboard = 0;
 console.log("Computer's Scoreboard is: " + cpuScoreboard);
+
+function updatePronoun() {
+    if (gameMatchCount == 1) {
+        gameMatchPronoun = 'st';
+    } else if (gameMatchCount == 2) {
+        gameMatchPronoun = 'nd';
+    } else if (gameMatchCount == 3) {
+        gameMatchPronoun = 'rd';
+    } else if (gameMatchCount >= 4) {
+        gameMatchPronoun = 'th';
+    } else {
+        console.log('error: failed to update gameMatchPronoun function');
+    }
+    console.log("Cuttent game-match: " + gameMatchCount + gameMatchPronoun);
+    }
 
 // ensuring at least one is a rock or paper or scissors
 function ensureOriginalAlias() {
@@ -210,7 +211,7 @@ function playerPickNull() {
     console.log("playerHighlight: " + playerHighlight);    
 }
 
-function playerPickRock() {
+function playerPickSlot1() {
     cpuPickNull();
 
     playerHighlightRock.style.borderColor = "lightcoral";
@@ -224,7 +225,7 @@ function playerPickRock() {
     console.log("playerHighlight: " + playerHighlight);
 }
 // -
-function playerPickPaper() {
+function playerPickSlot2() {
     cpuPickNull();
 
     playerHighlightRock.style.borderColor = "grey";
@@ -238,7 +239,7 @@ function playerPickPaper() {
     console.log("playerHighlight: " + playerHighlight);
 }
 // -
-function playerPickScissors() {
+function playerPickSlot3() {
     cpuPickNull();
     
     playerHighlightRock.style.borderColor = "grey";
