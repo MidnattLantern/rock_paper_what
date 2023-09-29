@@ -307,36 +307,45 @@ function announcePickCard() {
 function addScoreTo(winningContribute) {
     if (winningContribute === 'player') {
         dominantContributeIcon = " > ";
-        // update score for end-user interface
-        playerScoreboard = playerScoreboard + 1;
-        countPlayerScoreSlot = countPlayerScoreSlot + 1;
-        //update score for console
-        playerScoreSlot.innerHTML = countPlayerScoreSlot;
-        console.log("Player's Scoreboard is: " + playerScoreboard);
+
+        // update score for end-user interface only for "normal" gamemode
+        if (gamemodeVar === "normal") {
+            playerScoreboard = playerScoreboard + 1;
+            countPlayerScoreSlot = countPlayerScoreSlot + 1;
+            //update score for console
+            playerScoreSlot.innerHTML = countPlayerScoreSlot;
+            console.log("Player's Scoreboard is: " + playerScoreboard);
+        }
 
     } else if (winningContribute === 'cpu') {
         dominantContributeIcon = " < ";
-        // update score for end-user interface
-        cpuScoreboard = cpuScoreboard + 1;
-        countCpuScoreSlot = countCpuScoreSlot + 1;
-        //update score for console
-        cpuScoreSlot.innerHTML = countCpuScoreSlot;
-        console.log("Computer's Scoreboard is: " + cpuScoreboard);
+        // update score for end-user interface only for "normal" gamemode
+        if (gamemodeVar === "normal") {
+            cpuScoreboard = cpuScoreboard + 1;
+            countCpuScoreSlot = countCpuScoreSlot + 1;
+            //update score for console
+            cpuScoreSlot.innerHTML = countCpuScoreSlot;
+            console.log("Computer's Scoreboard is: " + cpuScoreboard);
+        }
+
 
     } else if (winningContribute === 'draw') {
         dominantContributeIcon = " = ";
-        // update score for end-user interface
-        playerScoreboard = playerScoreboard + 1;
-        countPlayerScoreSlot = countPlayerScoreSlot + 1;
-        //update score for console
-        playerScoreSlot.innerHTML = countPlayerScoreSlot;
-        console.log("Player's Scoreboard is: " + playerScoreboard);
-        // update score for end-user interface
-        countCpuScoreSlot = countCpuScoreSlot + 1;
-        cpuScoreSlot.innerHTML = countCpuScoreSlot;
-        //update score for console
-        cpuScoreboard = cpuScoreboard + 1;
-        console.log("Computer's Scoreboard is: " + cpuScoreboard);
+        // update score for end-user interface only for "normal" gamemode
+        if (gamemodeVar === "normal") {
+            playerScoreboard = playerScoreboard + 1;
+            countPlayerScoreSlot = countPlayerScoreSlot + 1;
+            //update score for console
+            playerScoreSlot.innerHTML = countPlayerScoreSlot;
+            console.log("Player's Scoreboard is: " + playerScoreboard);
+            // update score for end-user interface only for "normal" gamemode
+            countCpuScoreSlot = countCpuScoreSlot + 1;
+            cpuScoreSlot.innerHTML = countCpuScoreSlot;
+            //update score for console
+            cpuScoreboard = cpuScoreboard + 1;
+            console.log("Computer's Scoreboard is: " + cpuScoreboard);
+        }
+
 
     } else {
         console.log("error: failed to update contribute(s) score(s)");
@@ -347,21 +356,30 @@ function addScoreTo(winningContribute) {
 function highlightCondition(player, cpu) {
     announce.innerHTML = playerHighlight + dominantContributeIcon + cpuHighlight;
     console.log("--- < game conditions > ---");
-    console.log("player: " + player);
-    console.log("computer: " + cpu);
+    console.log("player: " + playerHighlight);
+    console.log("computer: " + cpuHighlight);
 }
 
-// the condition section will aready console.log( new pronoun )
+// whatever happens after player clicks "submit"
 function progressGame() {
-    if (gameMatchCount < 10) {
-        highlightCondition();
-        gameMatchCount = gameMatchCount + 1;
-        updatePronoun();
-        gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
-    } else if (gameMatchCount == 10) {
-        announce.innerHTML = "Game over";
-        console.log("game over");
+
+    // gamemode controllant
+    if (gamemodeVar === "normal") {
+        if (gameMatchCount < 10) {
+            highlightCondition();
+            gameMatchCount = gameMatchCount + 1;
+            updatePronoun();
+            gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
+
+        // gamemode controllant
+        } else if (gameMatchCount == 10) {
+            announce.innerHTML = "Game over";
+            console.log("game over");
+        }
+    } else if (gamemodeVar === "what") {
+            highlightCondition();
     }
+    
 }
 
 // Conditions for what contribute will win based on picked card, (player, cpu) should be connected to "playerHighlight"
@@ -369,8 +387,6 @@ function engageGame(player, cpu) {
 
         // To ensure the game can only be initiated when both contributes have made a choice
         if (playerHighlight != null && cpuHighlight != null) {
-
-            if (gamemodeVar === "normal") {
                 if (player == "rock" && cpu == "rock") {
                     addScoreTo('draw');
                     progressGame();
@@ -410,50 +426,7 @@ function engageGame(player, cpu) {
                 } else {
                     console.log("error: couldn't judge the engagement");
                 }
-
-            } else if (gamemodeVar === "what") {
-                if (player == "rock" && cpu == "rock") {
-
-                    progressGame();
-                    console.log("player rock, cpu rock, draw");
-                } else if (player == "rock" && cpu == "paper") {
-
-                    progressGame();
-                    console.log("player rock, cpu paper, cpu win");
-                } else if (player == "rock" && cpu == "scissors") {
-
-                    progressGame();
-                    console.log("player rock, cpu scissors, player win");
-                } else if (player == "paper" && cpu == "rock") {
-
-                    progressGame();
-                    console.log("player paper, cpu rock, player win");
-                } else if (player == "paper" && cpu == "paper") {
-
-                    progressGame();
-                    console.log("player paper, cpu paper, draw");
-                } else if (player == "paper" && cpu == "scissors") {
-
-                    progressGame();
-                    console.log("player paper, cpu scissors, cpu win");
-                } else if (player == "scissors" && cpu == "rock") {
-
-                    progressGame();
-                    console.log("player scissors, cpu rock, cpu win");
-                } else if (player == "scissors" && cpu == "paper") {
-
-                    progressGame();
-                    console.log("player scissors, cpu paper, player win");
-                } else if (player == "scissors" && cpu == "scissors") {
-
-                    progressGame();
-                    console.log("player scissors, cpu scissors, draw");
-                } else {
-                    console.log("error: couldn't judge the engagement");
-                }
-            }
-            } else {
-
+    } else {
         announce.innerHTML = "Please, pick a card";
         console.log("error: player and computer didn't highlight a card each");
     }
