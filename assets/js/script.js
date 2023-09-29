@@ -1,4 +1,4 @@
-// alias library
+// alias library (first item for both gamemodes, full library for gamemode "what" only)
 let playerRockAlias = ['🪨', '🍌', '👻', '👗', '🦆', '👀'];
 let playerPaperAlias = ['🧻', '🍉', '👽', '👙', '🐸', '👃'];
 let playerScissorsAlias = ['✂️', '🍋', '💀', '👘', '😸', '👄'];
@@ -6,7 +6,7 @@ let cpuRockAlias = ['🪨', '🧅', '🍹', '💻', '🥸', '🌹'];
 let cpuPaperAlias = ['🧻', '🥑', '🍷', '📱', '😴', '🌳'];
 let cpuScissorsAlias = ['✂️', '🍅', '🍺', '🖥️', '😍', '🪴'];
 
-// ID that decides which emoji to slice from alias library
+// ID that decides which emoji to slice from alias library (gamemode "what" only)
 let randomPlayerRockId = null;
 let randomPlayerPaperId = null;
 let randomPlayerScissorsId = null;
@@ -14,7 +14,7 @@ let randomCpuRockId = null;
 let randomCpuPaperId = null;
 let randomCpuScissorsId = null;
 
-// emoji alias decision
+// emoji alias decision (gamemode "what" only)
 let playerRock = playerRockAlias[0];
 let playerPaper = playerPaperAlias[0];
 let playerScissors = playerScissorsAlias[0];
@@ -22,7 +22,13 @@ let cpuRock = cpuRockAlias[0];
 let cpuPaper = cpuPaperAlias[0];
 let cpuScissors = cpuScissorsAlias[0];
 
-// Game score and pronoun conditions
+// emoji "spotlight" library, one of these is the alias emoji the player will need to determine (gamemode "what" only)
+let emojiSpotlightLibrary = [playerRock, playerPaper,
+    playerScissors, cpuRock, cpuPaper, cpuScissors];
+   let emojiSpotlight = null;
+   let writeEmojiSpotlight = document.getElementById('emoji_spotlight');
+
+// Game score and pronoun conditions (gamemode "normal" only)
 let gameCounterSlot = document.getElementById('game_counter_slot');
 let gameMatchCount = 1;
 let playerScoreSlot = document.getElementById('player_score_slot');
@@ -53,6 +59,13 @@ let cpuScoreboard = 0;
 
 // Gamemode variable
 let gamemodeVar = 'normal';
+
+// shuffle an emoji for "spotlight", this is the alias emoji the player will need to determine (gamemode "what" only)
+function shuffleEmojiSpotlight() {
+    let decideId = Math.floor(Math.random() * 6);
+    emojiSpotlight = emojiSpotlightLibrary[decideId];
+    writeEmojiSpotlight.innerHTML = (emojiSpotlight);
+}
 
 // "1st, 5th" and such
 function updatePronoun() {
