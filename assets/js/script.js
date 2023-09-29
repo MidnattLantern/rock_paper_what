@@ -47,7 +47,6 @@ let scissors = "scissors";
 let announce = document.getElementById('announcement_board');
 
 let gameMatchPronoun = "th";
-updatePronoun();
 
 // showing either < > = depending on who wins. Icon is updated by the addScoreTo() function
 let dominantContributeIcon = " = ";
@@ -434,17 +433,23 @@ function engageGame(player, cpu) {
 }
 
 function resetGame() {
-    playerHighlight = null;
-    cpuHighlight = null;
-    gameMatchCount = 1;
-    countPlayerScoreSlot = 0;
-    countCpuScoreSlot = 0;
-    gameMatchPronoun = "th";
-    gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
-    playerScoreSlot.innerHTML = countPlayerScoreSlot;
-    cpuScoreSlot.innerHTML = countCpuScoreSlot;
-    playerPickNull();
-    cpuPickNull();
-    announce.innerHTML = "Game reset";
-    console.log("game reset");
+    if (confirm('The game will be reset upon clicking "OK"! ') == true) {
+        playerHighlight = null;
+        cpuHighlight = null;
+        gameMatchCount = 1;
+        countPlayerScoreSlot = 0;
+        countCpuScoreSlot = 0;
+        gameMatchPronoun = "st";
+        gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
+        playerScoreSlot.innerHTML = countPlayerScoreSlot;
+        cpuScoreSlot.innerHTML = countCpuScoreSlot;
+        playerPickNull();
+        cpuPickNull();
+        announce.innerHTML = "Game reset";
+        console.log("game reset");
+    };
+
 }
+
+// on launch
+updatePronoun();
