@@ -1,32 +1,72 @@
-// Player data for "game conditions" and "highlight"
-var playerHighlight = null;
+// alias library
+let playerRockAlias = ['🪨', '🍌', '👻', '👗', '🦆', '👀'];
+let playerPaperAlias = ['🧻', '🍉', '👽', '👙', '🐸', '👃'];
+let playerScissorsAlias = ['✂️', '🍋', '💀', '👘', '😸', '👄'];
+let cpuRockAlias = ['🪨', '🧅', '🍹', '💻', '🥸', '🌹'];
+let cpuPaperAlias = ['🧻', '🥑', '🍷', '📱', '😴', '🌳'];
+let cpuScissorsAlias = ['✂️', '🍅', '🍺', '🖥️', '😍', '🪴'];
+
+// ID that decides which emoji to slice from alias library
+let randomPlayerRockId = null;
+let randomPlayerPaperId = null;
+let randomPlayerScissorsId = null;
+let randomCpuRockId = null;
+let randomCpuPaperId = null;
+let randomCpuScissorsId = null;
+
+// emoji alias decision
+let playerRock = playerRockAlias[0];
+let playerPaper = playerPaperAlias[0];
+let playerScissors = playerScissorsAlias[0];
+console.log("player's rock: " + playerRock);
+console.log("player's paper: " + playerPaper);
+console.log("player's scissors: " + playerScissors);
+let cpuRock = cpuRockAlias[0];
+let cpuPaper = cpuPaperAlias[0];
+let cpuScissors = cpuScissorsAlias[0];
+console.log("computer's rock: " + cpuRock);
+console.log("computer's paper: " + cpuPaper);
+console.log("computer's scissors: " + cpuScissors);
+
+// old code for Player data for "game conditions" and "highlight"
+/*
+let playerHighlight = null;
 console.log("playerHighlight: " + playerHighlight);
 let playerHighlightRock = document.getElementById("player_rock_button");
 let playerHighlightPaper = document.getElementById("player_paper_button");
 let playerHighlightScissors = document.getElementById("player_scissors_button");
-var playerScoreboard = 0;
+let playerScoreboard = 0;
 console.log("Player's Scoreboard is: " + playerScoreboard);
 
 // CPU data for "game conditions" and "highlight"
-var cpuHighlight = null;
+let cpuHighlight = null;
 console.log("cpuHighlight: " + cpuHighlight);
 let cpuHighlightRock = document.getElementById("cpu_rock_button");
 let cpuHighlightPaper = document.getElementById("cpu_paper_button");
 let cpuHighlightScissors = document.getElementById("cpu_scissors_button");
-var cpuScoreboard = 0;
+let cpuScoreboard = 0;
 console.log("Computer's Scoreboard is: " + cpuScoreboard);
+*/
 
 // Game score and pronoun conditions
 let gameCounterSlot = document.getElementById('game_counter_slot');
-var gameMatchCount = 1;
+let gameMatchCount = 1;
 
 let playerScoreSlot = document.getElementById('player_score_slot');
-var countPlayerScoreSlot = 0;
+let countPlayerScoreSlot = 0;
 
 let cpuScoreSlot = document.getElementById('cpu_score_slot');
-var countCpuScoreSlot = 0;
+let countCpuScoreSlot = 0;
 
-var gameMatchPronoun = "th";
+// for console.log() and initiate game
+let rock = "rock";
+let paper = "paper";
+let scissors = "scissors";
+
+// Announce section
+let announce = document.getElementById('announcement_board');
+
+let gameMatchPronoun = "th";
 function updatePronoun() {
 if (gameMatchCount == 1) {
     gameMatchPronoun = 'st';
@@ -44,12 +84,99 @@ console.log("Cuttent game-match: " + gameMatchCount + gameMatchPronoun);
 updatePronoun();
 
 // showing either < > = depending on who wins. Icon is updated by the addScoreTo() function
-var dominantContributeIcon = " = ";
+let dominantContributeIcon = " = ";
 
-// for console.log() and initiate game
-let rock = "rock";
-let paper = "paper";
-let scissors = "scissors";
+// Player data for "game conditions" and "highlight"
+let playerHighlight = null;
+console.log("playerHighlight: " + playerHighlight);
+let playerHighlightRock = document.getElementById("player_slot_1");
+let playerHighlightPaper = document.getElementById("player_slot_2");
+let playerHighlightScissors = document.getElementById("player_slot_3");
+var playerScoreboard = 0;
+console.log("Player's Scoreboard is: " + playerScoreboard);
+
+// CPU data for "game conditions" and "highlight"
+var cpuHighlight = null;
+console.log("cpuHighlight: " + cpuHighlight);
+let cpuHighlightRock = document.getElementById("cpu_slot_1");
+let cpuHighlightPaper = document.getElementById("cpu_slot_2");
+let cpuHighlightScissors = document.getElementById("cpu_slot_3");
+var cpuScoreboard = 0;
+console.log("Computer's Scoreboard is: " + cpuScoreboard);
+
+// ensuring at least one is a rock or paper or scissors
+function ensureOriginalAlias() {
+    if (randomPlayerRockId === 0 || randomPlayerPaperId === 0 || randomPlayerScissorsId === 0 || randomCpuRockId === 0 || randomCpuPaperId === 0 || randomCpuScissorsId === 0) {
+        console.log("game setup is fair");
+    } else {
+        console.log("game setup is unfair");
+        let decideFairGameId = Math.floor(Math.random() * 3);
+        if (decideFairGameId === 0) {
+            playerRock = playerRockAlias[0];
+            console.log("assigned 🪨 for player's rock");
+            console.log("game setup is now fair");
+        } else if (decideFairGameId === 1) {
+            playerPaper = playerPaperAlias[0];
+            console.log("assigned 🧻 for player's paper");
+            console.log("game setup is now fair");
+        } else if (decideFairGameId === 2) {
+            playerPaper = playerScissorsAlias[0];
+            console.log("assigned ✂️ for player's scissors");
+            console.log("game setup is now fair");
+        } else {
+            console.log("error: failed to make the game fair")
+        }
+    }
+}
+
+// computer will pick a card at random
+function cpuDecideCard() {
+    // to ensure choice ID is either 0, 1, or 2
+    let decideId = Math.floor(Math.random() * 3);
+    console.log("new computer's decision id: " + decideId);
+    if (decideId == 0) {
+        console.log("computer will pick slot 1");
+        cpuPickSlot1();
+    } else if (decideId == 1) {
+        console.log("computer will pick slot 2");
+        cpuPickSlot2();
+    } else if (decideId == 2) {
+        console.log("computer will pick slot 3");
+        cpuPickSlot3();
+    } else {
+        console.log("error: computer failed to make a decision");
+    }
+}
+
+function randomizePlayerAlias() {
+    randomPlayerRockId = Math.floor(Math.random() * 6);
+    randomPlayerPaperId = Math.floor(Math.random() * 6);
+    randomPlayerScissorsId = Math.floor(Math.random() * 6);
+    console.log("player's rock emoji ID: " + randomPlayerRockId);
+    console.log("player's paper emoji ID: " + randomPlayerPaperId);
+    console.log("player's scissors emoji ID: " + randomPlayerScissorsId);
+    playerRock = playerRockAlias[randomPlayerRockId];
+    playerPaper = playerPaperAlias[randomPlayerPaperId];
+    playerScissors = playerScissorsAlias[randomPlayerScissorsId];
+    console.log("player's rock: " + playerRock);
+    console.log("player's paper: " + playerPaper);
+    console.log("player's scissors: " + playerScissors);
+}
+
+function randomizeCpuAlias() {
+    randomCpuRockId = Math.floor(Math.random() * 6);
+    randomCpuPaperId = Math.floor(Math.random() * 6);
+    randomCpuScissorsId = Math.floor(Math.random() * 6);
+    console.log("computer's rock emoji ID: " + randomCpuRockId);
+    console.log("computer's paper emoji ID: " + randomCpuPaperId);
+    console.log("computer's scissors emoji ID: " + randomCpuScissorsId);
+    cpuRock = cpuRockAlias[randomCpuRockId];
+    cpuPaper = cpuPaperAlias[randomCpuPaperId];
+    cpuScissors = cpuScissorsAlias[randomCpuScissorsId];
+    console.log("computer's rock: " + cpuRock);
+    console.log("computer's paper: " + cpuPaper);
+    console.log("computer's scissors: " + cpuScissors);
+}
 
 // computer will pick a card at random
 function cpuDecideCard() {
@@ -174,8 +301,7 @@ function cpuPickScissors() {
     console.log("cpuHighlight: " + cpuHighlight);
 }
 
-// Announce section
-let announce = document.getElementById('announcement_board');
+
 
 function announcePickCard() {
     announce.innerHTML = "pick a card";
