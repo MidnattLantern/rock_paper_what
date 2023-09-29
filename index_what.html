@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪨Rock, 🧻Paper, 🍌What?</title>
+    <link href="../rock_paper_what/assets/css/style_what.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>🪨Rock, 🧻Paper, 🍌What?</h1>
+    </div>
+
+    <div class="navigation_bar">
+        Navigation bar <br>
+        <div href="../rock_paper_what/index.html">switch gamemode</div>
+    </div>
+
+    <div class="main">
+        main
+        <div id="game_window">
+
+            <!-- Announcement text content will change according to action -->
+            <h2 id="announcement_board">
+               announcement board
+            </h2>
+
+            <div class="universal_board">
+
+                <div id="player_board" class="rps_button_stack">
+                    <h3>Player</h3>
+                    <button class="rps_button" id="player_slot_1" onclick="playerPickSlot1()">slot 1</button>
+                    <button class="rps_button" id="player_slot_2" onclick="playerPickSlot2()">slot 2</button>
+                    <button class="rps_button" id="player_slot_3" onclick="playerPickSlot3()">slot 3</button>
+                    <br>
+                    <div id="submit_pick">
+                        <button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)"> submit </button>
+                    </div>
+                    
+                </div>
+
+                <hr>
+    
+                <div id="cpu_board" class="rps_button_stack">
+                    <h3>CPU</h3>
+                    <button class="rps_button" id="cpu_slot_1" onclick="cpuPickSlot1()">slot 1</button>
+                    <button class="rps_button" id="cpu_slot_2" onclick="cpuPickSlot2()">slot 2</button>
+                    <button class="rps_button" id="cpu_slot_3" onclick="cpuPickSlot3()">slot 3</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="randomizePlayerAlias()">test random player emoji ID</button>
+    <button onclick="randomizeCpuAlias()">test random computer emoji ID</button>
+    <button onclick="ensureOriginalAlias()">test make game setup fair</button>
+
+    <div class="footer">
+        footer
+    </div>
+    <script src="../rock_paper_what/assets/js/script_what.js"></script>
+</body>
+</html>

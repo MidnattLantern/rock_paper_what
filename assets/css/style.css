@@ -1,0 +1,115 @@
+/* ver 28 sep 2023 validated */
+* {
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+    list-style: none;
+}
+
+.rps_button_stack > button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.navigation_bar {
+    width: 100%;
+    text-align: center;
+    background-color: lightcoral;
+}
+
+.main {
+    width: 100%;
+    text-align: center;
+    
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    position:absolute;
+    bottom: 0px;
+    background-color: lightcoral;
+}
+
+.universal_board {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+#game_window {
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    height: 400px;
+    outline: 1px;
+    outline-style: auto;
+}
+
+.announcement_board {
+    outline: 1px;
+    outline-style: auto;
+}
+
+.rps_button {
+    width: 100px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#player_board {
+    margin-left: 100px;
+    margin-right: 150px;
+}
+
+#player_rock_button {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#player_paper_button {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#player_scissors_button {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#cpu_board {
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+#cpu_rock_button {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#cpu_paper_button {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#cpu_scissors_button {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}

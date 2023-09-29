@@ -1,0 +1,74 @@
+<!-- ver 28 sep 2023 validated -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪨Rock, 🧻Paper, 🍌What?</title>
+    <link href="../rock_paper_what/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Rock, Paper, What?</h1>
+    </div>
+
+    <div class="navigation_bar">
+        Navigation bar <br>
+        <div href="../rock_paper_what/index_what.html"> switch gamemode</div>
+    </div>
+
+    <div class="main">
+        main
+        <div id="game_window">
+
+            <!-- Announcement text content will change according to action -->
+            <h2 id="announcement_board">
+               announcement board
+            </h2>
+
+            <div class="universal_board">
+
+                <div id="player_board" class="rps_button_stack">
+                    <h3>Player</h3>
+                    <button class="rps_button" id="player_rock_button" onclick="playerPickRock()">rock</button>
+                    <button class="rps_button" id="player_paper_button" onclick="playerPickPaper()">paper</button>
+                    <button class="rps_button" id="player_scissors_button" onclick="playerPickScissors()">scissors</button>
+                    <br>
+                    <h4>
+                        Score:
+                        <span id="player_score_slot">0</span>
+                    </h4>
+                    <br>
+                    <div id="submit_pick">
+                        <button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)"> submit </button>
+                    </div>
+                    
+                </div>
+
+                <hr>
+    
+                <div id="cpu_board" class="rps_button_stack">
+                    <h3>CPU</h3>
+                    <button class="rps_button" id="cpu_rock_button" onclick="cpuPickRock()">rock</button>
+                    <button class="rps_button" id="cpu_paper_button" onclick="cpuPickPaper()">paper</button>
+                    <button class="rps_button" id="cpu_scissors_button" onclick="cpuPickScissors()">scissors</button>
+                    <br>
+                    <h4>
+                        Score:
+                        <span id="cpu_score_slot">0</span>
+                    </h4>
+                </div>
+            </div>
+
+            <h3>Game match: <br>
+                <span id="game_counter_slot">1st</span> of 10th</h3>
+            <button onclick="resetGame()">Reset game</button>
+        </div>
+    </div>
+    <div class="footer">
+        footer
+    </div>
+    <script src="../rock_paper_what/assets/js/script.js"></script>
+</body>
+</html>
