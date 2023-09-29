@@ -28,26 +28,6 @@ console.log("computer's rock: " + cpuRock);
 console.log("computer's paper: " + cpuPaper);
 console.log("computer's scissors: " + cpuScissors);
 
-// old code for Player data for "game conditions" and "highlight"
-/*
-let playerHighlight = null;
-console.log("playerHighlight: " + playerHighlight);
-let playerHighlightRock = document.getElementById("player_rock_button");
-let playerHighlightPaper = document.getElementById("player_paper_button");
-let playerHighlightScissors = document.getElementById("player_scissors_button");
-let playerScoreboard = 0;
-console.log("Player's Scoreboard is: " + playerScoreboard);
-
-// CPU data for "game conditions" and "highlight"
-let cpuHighlight = null;
-console.log("cpuHighlight: " + cpuHighlight);
-let cpuHighlightRock = document.getElementById("cpu_rock_button");
-let cpuHighlightPaper = document.getElementById("cpu_paper_button");
-let cpuHighlightScissors = document.getElementById("cpu_scissors_button");
-let cpuScoreboard = 0;
-console.log("Computer's Scoreboard is: " + cpuScoreboard);
-*/
-
 // Game score and pronoun conditions
 let gameCounterSlot = document.getElementById('game_counter_slot');
 let gameMatchCount = 1;
@@ -105,9 +85,39 @@ function updatePronoun() {
     console.log("Cuttent game-match: " + gameMatchCount + gameMatchPronoun);
     }
 
+// Alias setup
+function setupGamemode(mode) {
+    let playerSlotSetup1 = document.getElementById("player_slot_1");
+    let playerSlotSetup2 = document.getElementById("player_slot_2");
+    let playerSlotSetup3 = document.getElementById("player_slot_3");
+    let cpuSlotSetup1 = document.getElementById("cpu_slot_1");
+    let cpuSlotSetup2 = document.getElementById("cpu_slot_2");
+    let cpuSlotSetup3 = document.getElementById("cpu_slot_3");
+    if (mode === 'normal') {
+        playerSlotSetup1.innerHTML = playerRockAlias[0];
+        playerSlotSetup2.innerHTML = playerPaperAlias[0];
+        playerSlotSetup3.innerHTML = playerScissorsAlias[0];
+        cpuSlotSetup1.innerHTML = cpuRockAlias[0];
+        cpuSlotSetup2.innerHTML = cpuPaperAlias[0];
+        cpuSlotSetup3.innerHTML = cpuScissorsAlias[0];
+    } else if (mode === 'what') {
+        randomizePlayerAlias();
+        randomizeCpuAlias();
+        ensureOriginalAlias();
+        playerSlotSetup1.innerHTML = playerRock;
+        playerSlotSetup2.innerHTML = playerPaper;
+        playerSlotSetup3.innerHTML = playerScissors;
+        cpuSlotSetup1.innerHTML = cpuRock;
+        cpuSlotSetup2.innerHTML = cpuPaper;
+        cpuSlotSetup3.innerHTML = cpuScissors;
+    }
+}
+
 // ensuring at least one is a rock or paper or scissors
 function ensureOriginalAlias() {
-    if (randomPlayerRockId === 0 || randomPlayerPaperId === 0 || randomPlayerScissorsId === 0 || randomCpuRockId === 0 || randomCpuPaperId === 0 || randomCpuScissorsId === 0) {
+    if (randomPlayerRockId === 0 || randomPlayerPaperId === 0 ||
+         randomPlayerScissorsId === 0 || randomCpuRockId === 0 ||
+          randomCpuPaperId === 0 || randomCpuScissorsId === 0) {
         console.log("game setup is fair");
     } else {
         console.log("game setup is unfair");
@@ -121,7 +131,7 @@ function ensureOriginalAlias() {
             console.log("assigned 🧻 for player's paper");
             console.log("game setup is now fair");
         } else if (decideFairGameId === 2) {
-            playerPaper = playerScissorsAlias[0];
+            playerScissors = playerScissorsAlias[0];
             console.log("assigned ✂️ for player's scissors");
             console.log("game setup is now fair");
         } else {
