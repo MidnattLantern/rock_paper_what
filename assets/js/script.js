@@ -354,7 +354,13 @@ function addScoreTo(winningContribute) {
 
 // announce engeagement
 function highlightCondition(player, cpu) {
-    announce.innerHTML = playerHighlight + dominantContributeIcon + cpuHighlight;
+    // gamemode controllant
+    if (gamemodeVar === "normal") {
+        announce.innerHTML = playerHighlight + dominantContributeIcon + cpuHighlight;
+    } else if (gamemodeVar === "what") {
+        announce.innerHTML = '?' + dominantContributeIcon + '?';
+    }
+
     console.log("--- < game conditions > ---");
     console.log("player: " + playerHighlight);
     console.log("computer: " + cpuHighlight);
