@@ -26,6 +26,8 @@ let cpuScissors = cpuScissorsAlias[0];
 let emojiSpotlightLibrary = [playerRock, playerPaper, 
  playerScissors, cpuRock, cpuPaper, cpuScissors];
 let emojiSpotlight = null;
+// true identity behind the alias will be revealed upon submittion, update at shuffleEmojiSpotlight()
+let trueId = null;
 let writeEmojiSpotlight = document.getElementById('emoji_spotlight');
 
 // Game score and pronoun conditions (gamemode "normal" only)
@@ -71,6 +73,13 @@ function shuffleEmojiSpotlight() {
     let decideId = Math.floor(Math.random() * 6);
     emojiSpotlight = emojiSpotlightLibrary[decideId];
     writeEmojiSpotlight.innerHTML = (emojiSpotlight);
+    if (decideId == 0 || decideId == 3) {
+        trueId = 'rock';
+    } else if (decideId == 1 || decideId == 4) {
+        trueId = 'paper';
+    } else if (decideId == 2 || decideId == 5) {
+        trueId = 'scissors'
+    }
 }
 
 // "1st, 5th" and such
@@ -167,6 +176,7 @@ function cpuDecideCard() {
     }
 }
 
+// gamemode 'what' only
 function randomizePlayerAlias() {
     randomPlayerRockId = Math.floor(Math.random() * 6);
     randomPlayerPaperId = Math.floor(Math.random() * 6);
@@ -185,6 +195,7 @@ function randomizePlayerAlias() {
     console.log("player's scissors: " + playerScissors);
 }
 
+//gamemode 'what' only
 function randomizeCpuAlias() {
     randomCpuRockId = Math.floor(Math.random() * 6);
     randomCpuPaperId = Math.floor(Math.random() * 6);
@@ -234,10 +245,8 @@ function playerPickNull() {
     playerHighlight = null;
     console.log("playerHighlight: " + playerHighlight);    
 }
-
 function playerPickSlot1() {
     cpuPickNull();
-
     playerHighlightRock.style.borderColor = "lightcoral";
     playerHighlightRock.style.borderWidth = "2px";
     playerHighlightPaper.style.borderColor = "grey";
@@ -248,10 +257,8 @@ function playerPickSlot1() {
     playerHighlight = "rock";
     console.log("playerHighlight: " + playerHighlight);
 }
-// -
 function playerPickSlot2() {
     cpuPickNull();
-
     playerHighlightRock.style.borderColor = "grey";
     playerHighlightRock.style.borderWidth = "1px";
     playerHighlightPaper.style.borderColor = "lightcoral";
@@ -262,10 +269,8 @@ function playerPickSlot2() {
     playerHighlight = "paper";
     console.log("playerHighlight: " + playerHighlight);
 }
-// -
 function playerPickSlot3() {
     cpuPickNull();
-    
     playerHighlightRock.style.borderColor = "grey";
     playerHighlightRock.style.borderWidth = "1px";
     playerHighlightPaper.style.borderColor = "grey";
@@ -300,7 +305,6 @@ function cpuPickSlot1() {
     cpuHighlight = "rock";
     console.log("cpuHighlight: " + cpuHighlight);
 }
-// -
 function cpuPickSlot2() {
     cpuHighlightRock.style.borderColor = "grey";
     cpuHighlightRock.style.borderWidth = "1px";
@@ -366,11 +370,10 @@ function announcePickCard() {
     announce.innerHTML = "pick a card";
 }
 
-// add score
+// add score (gamemode 'normal' only)
 function addScoreTo(winningContribute) {
     if (winningContribute === 'player') {
         dominantContributeIcon = " > ";
-
         // update score for end-user interface only for "normal" gamemode
         if (gamemodeVar === "normal") {
             playerScoreboard = playerScoreboard + 1;
@@ -379,7 +382,6 @@ function addScoreTo(winningContribute) {
             playerScoreSlot.innerHTML = countPlayerScoreSlot;
             console.log("Player's Scoreboard is: " + playerScoreboard);
         }
-
     } else if (winningContribute === 'cpu') {
         dominantContributeIcon = " < ";
         // update score for end-user interface only for "normal" gamemode
@@ -390,8 +392,6 @@ function addScoreTo(winningContribute) {
             cpuScoreSlot.innerHTML = countCpuScoreSlot;
             console.log("Computer's Scoreboard is: " + cpuScoreboard);
         }
-
-
     } else if (winningContribute === 'draw') {
         dominantContributeIcon = " = ";
         // update score for end-user interface only for "normal" gamemode
@@ -408,8 +408,6 @@ function addScoreTo(winningContribute) {
             cpuScoreboard = cpuScoreboard + 1;
             console.log("Computer's Scoreboard is: " + cpuScoreboard);
         }
-
-
     } else {
         console.log("error: failed to update contribute(s) score(s)");
     }
@@ -423,15 +421,13 @@ function highlightCondition(player, cpu) {
     } else if (gamemodeVar === "what") {
         announce.innerHTML = '?' + dominantContributeIcon + '?';
     }
-
     console.log("--- < game conditions > ---");
     console.log("player: " + playerHighlight);
     console.log("computer: " + cpuHighlight);
 }
 
-// whatever happens after player clicks "submit"
+// event that happens after player clicks "submit"
 function progressGame() {
-
     // gamemode controllant
     if (gamemodeVar === "normal") {
         if (gameMatchCount < 10) {
@@ -439,7 +435,6 @@ function progressGame() {
             gameMatchCount = gameMatchCount + 1;
             updatePronoun();
             gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
-
         // gamemode controllant
         } else if (gameMatchCount == 10) {
             announce.innerHTML = "Game over";
@@ -455,15 +450,17 @@ function progressGame() {
 
 // reveal alias answer upon clicking 'submit' (gamemode 'what' only)
 function revealAlias() {
-    let shuffleBoard = document.getElementById('shuffle_board');
+    let reveal = document.getElementById('emoji_spotlight_reveal');
     announce.innerHTML = "Answer:"
     console.log('revealing alias');
-    shuffleBoard.innerHTML = `<h3><span id="emoji_spotlight">alias</span> is a</h3> <br>
-    <button id="guess_alias_slot_rock" ">🪨</button>
-    <button id="guess_alias_slot_paper" ">🧻</button>
-    <button id="guess_alias_slot_scissors" ">✂️</button>
-    <br><br>
-    <button onclick="nextWhatGame()">Next Game</button>`;
+    if (trueId == 'rock') {
+        reveal.innerHTML = " 🪨";
+    } else if (trueId == 'paper') {
+        reveal.innerHTML = " 🧻";
+    } else if (trueId == 'scissors') {
+        reveal.innerHTML = " ✂️";
+    }
+
 }
 
 function nextWhatGame() {
