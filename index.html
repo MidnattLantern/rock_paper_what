@@ -7,7 +7,7 @@
     <title>🪨Rock, 🧻Paper, 🍌What?</title>
     <link href="../rock_paper_what/assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body onload="switchGamemode('normal')">
 
     <div class="header">
         <h1>🪨Rock, 🧻Paper, 🍌What?</h1>
@@ -41,7 +41,7 @@
                     </h4>
                     <br>
                     <div id="submit_pick">
-                        <button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)"> submit </button>
+                        <button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)">Submit</button>
                     </div>
                     
                 </div>
@@ -65,7 +65,6 @@
                 <span id="game_counter_slot">1st</span> of 10th</h3>
             <button onclick="resetGame()">Reset game</button>
         </div>
-        <button onclick="switchGamemode('normal')">test setup</button>
     </div>
     <div class="footer">
         footer

@@ -51,13 +51,19 @@ let playerHighlightScissors = document.getElementById("player_slot_3");
 var playerScoreboard = 0;
 
 // CPU data for "game conditions" and "highlight"
-var cpuHighlight = null;
+let cpuHighlight = null;
 let cpuHighlightRock = document.getElementById("cpu_slot_1");
 let cpuHighlightPaper = document.getElementById("cpu_slot_2");
 let cpuHighlightScissors = document.getElementById("cpu_slot_3");
 let cpuScoreboard = 0;
 
-// Gamemode variable
+// Alias guess data for "highlight" (gamemode 'what' only)
+let guessAliasHighlight = null;
+let guessAliasHighlightRock = document.getElementById("guess_alias_slot_rock");
+let guessAliasHighlightPaper = document.getElementById("guess_alias_slot_paper");
+let guessAliasHighlightScissors = document.getElementById("guess_alias_slot_scissors");
+
+// Gamemode variable to switch between 'normal' and 'what'
 let gamemodeVar = 'normal';
 
 // shuffle an emoji for "spotlight", this is the alias emoji the player will need to determine (gamemode "what" only)
@@ -271,7 +277,6 @@ function playerPickSlot3() {
 }
 
 // CPU highlight
-
 function cpuPickNull() {
     cpuHighlightRock.style.borderColor = "grey";
     cpuHighlightRock.style.borderWidth = "1px";
@@ -306,7 +311,6 @@ function cpuPickSlot2() {
     cpuHighlight = "paper";
     console.log("cpuHighlight: " + cpuHighlight);
 }
-// -
 function cpuPickSlot3() {
     cpuHighlightRock.style.borderColor = "grey";
     cpuHighlightRock.style.borderWidth = "1px";
@@ -319,6 +323,44 @@ function cpuPickSlot3() {
     console.log("cpuHighlight: " + cpuHighlight);
 }
 
+// Alias highlight (gamemode 'what' only)
+function guessAliasIs(guess) {
+    if (guess === 'rock') {
+        guessAliasHighlight = 'rock';
+        guessAliasHighlightRock.style.borderColor = "lightcoral";
+        guessAliasHighlightRock.style.borderWidth = "2px";
+        guessAliasHighlightPaper.style.borderColor = "grey";
+        guessAliasHighlightPaper.style.borderWidth = "1px";
+        guessAliasHighlightScissors.style.borderColor = "grey";
+        guessAliasHighlightScissors.style.borderWidth = "1px";
+        console.log('player believe alias is a rock');
+
+    } else if (guess === 'paper') {
+        guessAliasHighlight = 'paper';
+        guessAliasHighlightRock.style.borderColor = "grey";
+        guessAliasHighlightRock.style.borderWidth = "1px";
+        guessAliasHighlightPaper.style.borderColor = "lightcoral";
+        guessAliasHighlightPaper.style.borderWidth = "2px";
+        guessAliasHighlightScissors.style.borderColor = "grey";
+        guessAliasHighlightScissors.style.borderWidth = "1px";
+        console.log('player believe alias is a paper');
+
+    } else if (guess === 'scissors') {
+        guessAliasHighlight = 'paper';
+        guessAliasHighlightRock.style.borderColor = "grey";
+        guessAliasHighlightRock.style.borderWidth = "1px";
+        guessAliasHighlightPaper.style.borderColor = "grey";
+        guessAliasHighlightPaper.style.borderWidth = "1px";
+        guessAliasHighlightScissors.style.borderColor = "lightcoral";
+        guessAliasHighlightScissors.style.borderWidth = "2px";
+        console.log('player believe alias is a scissors');
+
+    } else {
+        console.log('failed to judgehighlight of guessing alias')
+    }
+}
+
+// announce 'pick a card'
 function announcePickCard() {
     announce.innerHTML = "pick a card";
 }
@@ -403,12 +445,28 @@ function progressGame() {
             console.log("game over");
             // remove the submit button when Game Over appear
             let closeSubmitButton = document.getElementById('submit_pick');
-            closeSubmitButton.remove();
+            closeSubmitButton.innerHTML = "";
         }
     } else if (gamemodeVar === "what") {
             highlightCondition();
     }
-    
+}
+
+// reveal alias answer upon clicking 'submit' (gamemode 'what' only)
+function revealAlias() {
+    let shuffleBoard = document.getElementById('shuffle_board');
+    announce.innerHTML = "Answer:"
+    console.log('revealing alias');
+    shuffleBoard.innerHTML = `<h3><span id="emoji_spotlight">alias</span> is a</h3> <br>
+    <button id="guess_alias_slot_rock" ">🪨</button>
+    <button id="guess_alias_slot_paper" ">🧻</button>
+    <button id="guess_alias_slot_scissors" ">✂️</button>
+    <br><br>
+    <button onclick="nextWhatGame()">Next Game</button>`;
+}
+
+function nextWhatGame() {
+    console.log('player clicked on next game')
 }
 
 // Conditions for what contribute will win based on picked card, (player, cpu) should be connected to "playerHighlight"
@@ -479,16 +537,12 @@ function resetGame() {
         // takes back the submit button upon reset
         if (gamemodeVar === 'normal') {
             let reopenSubmitButton = document.getElementById('submit_pick');
-            reopenSubmitButton.innerHTML = 
-            `<button id="submit_button" onclick="cpuDecideCard(),
-             engageGame(playerHighlight, cpuHighlight)"> submit
-              </button>`;
+            reopenSubmitButton.innerHTML = `<button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)">Submit</button>`;
         }
-    };
+    }
 }
 
 // on launch
-updatePronoun();
 console.log("player's rock: " + playerRock);
 console.log("player's paper: " + playerPaper);
 console.log("player's scissors: " + playerScissors);
