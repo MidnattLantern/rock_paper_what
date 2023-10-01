@@ -435,7 +435,6 @@ function progressGame() {
             gameMatchCount = gameMatchCount + 1;
             updatePronoun();
             gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
-        // gamemode controllant
         } else if (gameMatchCount == 10) {
             announce.innerHTML = "Game over";
             console.log("game over");
@@ -454,11 +453,10 @@ function revealAlias() {
     if (trueId === guessAliasHighlight) {
         announce.innerHTML = "Correct!";
         console.log('player was correct');
-    } else {   
+    } else {
         announce.innerHTML = "Incorrect...";
         console.log('player was wrong');
     }
-    
     console.log('revealing alias');
     if (trueId == 'rock') {
         reveal.innerHTML = " 🪨";
@@ -467,11 +465,10 @@ function revealAlias() {
     } else if (trueId == 'scissors') {
         reveal.innerHTML = " ✂️";
     }
-
-}
-
-function nextWhatGame() {
-    console.log('player clicked on next game')
+    let closeSubmitButton = document.getElementById('submit_pick');
+    let nextGameButton = document.getElementById('alias_submit_button');
+    closeSubmitButton.innerHTML = "";
+    nextGameButton.innerHTML = `<button onclick="resetGame('what')">Next Game</button>`;
 }
 
 // Conditions for what contribute will win based on picked card, (player, cpu) should be connected to "playerHighlight"
@@ -524,26 +521,59 @@ function engageGame(player, cpu) {
     }
 }
 
-function resetGame() {
-    if (confirm('The game will be reset upon clicking "OK"! ') == true) {
+function resetGame(gamemode) {
+    if (gamemode == 'normal') {
+        if (confirm('The game will be reset upon clicking "OK"! ') == true) {
+            playerHighlight = null;
+            cpuHighlight = null;
+            gameMatchCount = 1;
+            countPlayerScoreSlot = 0;
+            countCpuScoreSlot = 0;
+            gameMatchPronoun = "st";
+            gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
+            playerScoreSlot.innerHTML = countPlayerScoreSlot;
+            cpuScoreSlot.innerHTML = countCpuScoreSlot;
+            playerPickNull();
+            cpuPickNull();
+            announce.innerHTML = "Game reset";
+            console.log("game reset");
+            // takes back the submit button upon reset
+                    }
+    } else if (gamemode == 'what') {
+        // SwitchGamemode already shuffle the alias emojis
+        switchGamemode('what');
+
+        cpuHighlightRock.style.borderColor = "grey";
+        cpuHighlightRock.style.borderWidth = "1px";
+        cpuHighlightPaper.style.borderColor = "grey";
+        cpuHighlightPaper.style.borderWidth = "1px";
+        cpuHighlightScissors.style.borderColor = "grey";
+        cpuHighlightScissors.style.borderWidth = "1px";
+
+        playerHighlightRock.style.borderColor = "grey";
+        playerHighlightRock.style.borderWidth = "1px";
+        playerHighlightPaper.style.borderColor = "grey";
+        playerHighlightPaper.style.borderWidth = "1px";
+        playerHighlightScissors.style.borderColor = "grey";
+        playerHighlightScissors.style.borderWidth = "1px";
+
+        guessAliasHighlightRock.style.borderColor = "grey";
+        guessAliasHighlightRock.style.borderWidth = "1px";
+        guessAliasHighlightPaper.style.borderColor = "grey";
+        guessAliasHighlightPaper.style.borderWidth = "1px";
+        guessAliasHighlightScissors.style.borderColor = "grey";
+        guessAliasHighlightScissors.style.borderWidth = "1px";
+
         playerHighlight = null;
         cpuHighlight = null;
-        gameMatchCount = 1;
-        countPlayerScoreSlot = 0;
-        countCpuScoreSlot = 0;
-        gameMatchPronoun = "st";
-        gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
-        playerScoreSlot.innerHTML = countPlayerScoreSlot;
-        cpuScoreSlot.innerHTML = countCpuScoreSlot;
-        playerPickNull();
-        cpuPickNull();
-        announce.innerHTML = "Game reset";
-        console.log("game reset");
-        // takes back the submit button upon reset
-        if (gamemodeVar === 'normal') {
-            let reopenSubmitButton = document.getElementById('submit_pick');
-            reopenSubmitButton.innerHTML = `<button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)">Submit</button>`;
-        }
+        guessAliasHighlight = null;
+        let resetAliasReveal = document.getElementById('emoji_spotlight_reveal');
+        let reopenSubmitButton = document.getElementById('submit_pick');
+        let reopenAliasSubmitButton = document.getElementById('alias_submit_button');
+        resetAliasReveal.innerHTML = "...";
+        reopenSubmitButton.innerHTML = `<button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)">Submit</button>`;
+        reopenAliasSubmitButton.innerHTML = `<button onclick="revealAlias()">Submit</button>`;
+        announce.innerHTML = "New Game";
     }
 }
 
