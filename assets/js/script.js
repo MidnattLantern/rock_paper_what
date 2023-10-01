@@ -59,7 +59,7 @@ let cpuHighlightPaper = document.getElementById("cpu_slot_2");
 let cpuHighlightScissors = document.getElementById("cpu_slot_3");
 let cpuScoreboard = 0;
 
-// Alias guess data for "highlight" (gamemode 'what' only)
+// Alias guess data for "highlight" will be compared with "trueId" at revealAlias()(gamemode 'what' only)
 let guessAliasHighlight = null;
 let guessAliasHighlightRock = document.getElementById("guess_alias_slot_rock");
 let guessAliasHighlightPaper = document.getElementById("guess_alias_slot_paper");
@@ -451,7 +451,14 @@ function progressGame() {
 // reveal alias answer upon clicking 'submit' (gamemode 'what' only)
 function revealAlias() {
     let reveal = document.getElementById('emoji_spotlight_reveal');
-    announce.innerHTML = "Answer:"
+    if (trueId === guessAliasHighlight) {
+        announce.innerHTML = "Correct!";
+        console.log('player was correct');
+    } else {   
+        announce.innerHTML = "Incorrect...";
+        console.log('player was wrong');
+    }
+    
     console.log('revealing alias');
     if (trueId == 'rock') {
         reveal.innerHTML = " 🪨";
