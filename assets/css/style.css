@@ -113,3 +113,21 @@ ul {
     border: solid grey 1px;
     border-radius: 5px;
 }
+
+#guess_alias_slot_rock {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#guess_alias_slot_paper {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#guess_alias_slot_scissors {
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}

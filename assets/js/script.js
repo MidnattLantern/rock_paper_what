@@ -104,6 +104,7 @@ function switchGamemode(gamemode) {
         randomizePlayerAlias();
         randomizeCpuAlias();
         ensureOriginalAlias();
+
         playerSlotSetup1.innerHTML = playerRock;
         playerSlotSetup2.innerHTML = playerPaper;
         playerSlotSetup3.innerHTML = playerScissors;
@@ -169,7 +170,7 @@ function randomizePlayerAlias() {
     playerRock = playerRockAlias[randomPlayerRockId];
     playerPaper = playerPaperAlias[randomPlayerPaperId];
     playerScissors = playerScissorsAlias[randomPlayerScissorsId];
-    // update the library for spotlight
+    // update the library for spotlight (needs to be repeated for CPU)
     emojiSpotlightLibrary = [playerRock, playerPaper, 
         playerScissors, cpuRock, cpuPaper, cpuScissors];
     console.log("player's rock: " + playerRock);
@@ -187,6 +188,9 @@ function randomizeCpuAlias() {
     cpuRock = cpuRockAlias[randomCpuRockId];
     cpuPaper = cpuPaperAlias[randomCpuPaperId];
     cpuScissors = cpuScissorsAlias[randomCpuScissorsId];
+    // update the library for spotlight
+    emojiSpotlightLibrary = [playerRock, playerPaper, 
+        playerScissors, cpuRock, cpuPaper, cpuScissors];
     console.log("computer's rock: " + cpuRock);
     console.log("computer's paper: " + cpuPaper);
     console.log("computer's scissors: " + cpuScissors);
