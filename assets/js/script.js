@@ -23,10 +23,10 @@ let cpuPaper = cpuPaperAlias[0];
 let cpuScissors = cpuScissorsAlias[0];
 
 // emoji "spotlight" library, one of these is the alias emoji the player will need to determine (gamemode "what" only)
-let emojiSpotlightLibrary = [playerRock, playerPaper,
-    playerScissors, cpuRock, cpuPaper, cpuScissors];
-   let emojiSpotlight = null;
-   let writeEmojiSpotlight = document.getElementById('emoji_spotlight');
+let emojiSpotlightLibrary = [playerRock, playerPaper, 
+ playerScissors, cpuRock, cpuPaper, cpuScissors];
+let emojiSpotlight = null;
+let writeEmojiSpotlight = document.getElementById('emoji_spotlight');
 
 // Game score and pronoun conditions (gamemode "normal" only)
 let gameCounterSlot = document.getElementById('game_counter_slot');
@@ -169,6 +169,9 @@ function randomizePlayerAlias() {
     playerRock = playerRockAlias[randomPlayerRockId];
     playerPaper = playerPaperAlias[randomPlayerPaperId];
     playerScissors = playerScissorsAlias[randomPlayerScissorsId];
+    // update the library for spotlight
+    emojiSpotlightLibrary = [playerRock, playerPaper, 
+        playerScissors, cpuRock, cpuPaper, cpuScissors];
     console.log("player's rock: " + playerRock);
     console.log("player's paper: " + playerPaper);
     console.log("player's scissors: " + playerScissors);
