@@ -110,6 +110,7 @@ function switchGamemode(gamemode) {
         randomizePlayerAlias();
         randomizeCpuAlias();
         ensureOriginalAlias();
+        shuffleEmojiSpotlight();
 
         playerSlotSetup1.innerHTML = playerRock;
         playerSlotSetup2.innerHTML = playerPaper;
