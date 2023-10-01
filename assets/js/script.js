@@ -394,6 +394,9 @@ function progressGame() {
         } else if (gameMatchCount == 10) {
             announce.innerHTML = "Game over";
             console.log("game over");
+            // remove the submit button when Game Over appear
+            let closeSubmitButton = document.getElementById('submit_pick');
+            closeSubmitButton.remove();
         }
     } else if (gamemodeVar === "what") {
             highlightCondition();
@@ -466,6 +469,14 @@ function resetGame() {
         cpuPickNull();
         announce.innerHTML = "Game reset";
         console.log("game reset");
+        // takes back the submit button upon reset
+        if (gamemodeVar === 'normal') {
+            let reopenSubmitButton = document.getElementById('submit_pick');
+            reopenSubmitButton.innerHTML = 
+            `<button id="submit_button" onclick="cpuDecideCard(),
+             engageGame(playerHighlight, cpuHighlight)"> submit
+              </button>`;
+        }
     };
 }
 
