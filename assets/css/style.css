@@ -196,6 +196,7 @@ body {
         outline: 3px;
         outline-style: solid;
         border-radius: 10px;
+        box-shadow: 10px 1px 20px rgb(0, 0, 0);
     }
 
     #player_board {
