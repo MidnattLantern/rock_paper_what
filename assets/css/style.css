@@ -4,8 +4,30 @@
     font-family: 'Tilt Neon', cursive;
 }
 
+h1 {
+    color: rgb(255, 232, 236);
+    background-color: rgb(38, 34, 42);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+a, .navigation_bar {
+    color: rgb(255, 232, 236);
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightcoral;
+    text-decoration: underline;
+}
+
 ul {
     list-style: none;
+}
+
+.footer {
+    color: rgb(255, 232, 236);
 }
 
 body {
@@ -14,7 +36,7 @@ body {
 }
 
 button {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border-radius: 5px;
 }
 
@@ -85,7 +107,7 @@ button:hover {
 
 #game_window {
     padding: 5px;
-    background-color: white;
+    background-color: rgb(255, 232, 236);
 }
 
 #player_slot_1 {
@@ -178,6 +200,7 @@ button:hover {
 @media (max-width: 768px) {
     h1 {
         font-size: 20px;
+        width: 250px;
     }
 
     #game_window {
@@ -202,6 +225,7 @@ button:hover {
 @media (min-width: 768px) {
     h1 {
         font-size: 35px;
+        width: 500px;
     }
 
     #game_window {
