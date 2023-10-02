@@ -8,6 +8,11 @@ ul {
     list-style: none;
 }
 
+body {
+    background-image: url("../images/emoji_wallpaper.png");
+    background-attachment: fixed;
+}
+
 .rps_button_stack > button {
     margin-left: auto;
     margin-right: auto;
@@ -22,7 +27,6 @@ ul {
 .navigation_bar {
     width: 100%;
     text-align: center;
-    background-color: lightcoral;
 }
 
 .main {
@@ -35,7 +39,6 @@ ul {
     text-align: center;
     position:absolute;
     bottom: 0px;
-    background-color: lightcoral;
 }
 
 .universal_board {
@@ -44,11 +47,6 @@ ul {
     justify-content: center;
     width: 100%;
     text-align: center;
-}
-
-.wallpaper {
-    background-color: lightcoral;
-    height: 800px;
 }
 
 #announcement_board {
