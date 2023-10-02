@@ -114,6 +114,23 @@ ul {
     border-radius: 5px;
 }
 
+#submit_pick > button{
+    width: 70px;
+    height: 50px;
+}
+
+#reset_button {
+    width: 70px;
+    height: 50px;   
+   }
+
+#closed_submit_button {
+    color: grey;
+    background-color: white;
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 20px;
@@ -121,7 +138,7 @@ ul {
 
     #game_window {
         width: 100%;
-        height: 450px;
+        height: 500px;
         outline: 1px;
         outline-style: auto;
     }
@@ -135,10 +152,9 @@ ul {
         margin-left: 20px;
         margin-right: 0px;
     }
-    #submit_pick > button{
-        width: 70px;
-        height: 50px;
-    }
+    
+
+    
 }
 
 @media (min-width: 768px) {
@@ -150,7 +166,7 @@ ul {
         margin-left: auto;
         margin-right: auto;
         width: 700px;
-        height: 450px;
+        height: 500px;
         outline: 1px;
         outline-style: auto;
     }
@@ -163,5 +179,9 @@ ul {
     #cpu_board {
         margin-left: 150px;
         margin-right: 100px;
+    }
+
+    #reset_button {
+
     }
 }

@@ -440,7 +440,7 @@ function progressGame() {
             console.log("game over");
             // remove the submit button when Game Over appear
             let closeSubmitButton = document.getElementById('submit_pick');
-            closeSubmitButton.innerHTML = "";
+            closeSubmitButton.innerHTML = `<button id="closed_submit_button" >Submit</button>`;
         }
     } else if (gamemodeVar === "what") {
             highlightCondition();
@@ -538,7 +538,10 @@ function resetGame(gamemode) {
             announce.innerHTML = "Game reset";
             console.log("game reset");
             // takes back the submit button upon reset
-                    }
+            let reopenSubmitButton = document.getElementById('submit_pick');
+            reopenSubmitButton.innerHTML = `<button onclick="cpuDecideCard(),
+             engageGame(playerHighlight, cpuHighlight)">Submit</button>`;
+            }
     } else if (gamemode == 'what') {
         // SwitchGamemode already shuffle the alias emojis
         switchGamemode('what');
