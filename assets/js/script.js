@@ -588,3 +588,52 @@ console.log("playerHighlight: " + playerHighlight);
 console.log("Player's Scoreboard is: " + playerScoreboard);
 console.log("cpuHighlight: " + cpuHighlight);
 console.log("Computer's Scoreboard is: " + cpuScoreboard);
+
+// "Fisher-Yates shuffle algorithm"
+function shufflePlayerSlotArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  function shuffleCpuSlotArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  
+  // array
+  let playerSlotArray = [0, 1, 2];
+  let cpuSlotArray = [0, 1, 2];
+  let playerSlotArrayRock = playerSlotArray[0];
+  let playerSlotArrayPaper = playerSlotArray[1];
+  let playerSlotArrayScissors = playerSlotArray[2];
+  let cpuSlotArrayRock = cpuSlotArray[0];
+  let cpuSlotArrayPaper = cpuSlotArray[1];
+  let cpuSlotArrayScissors = cpuSlotArray[2];
+  
+  // Shuffle the array
+  shufflePlayerSlotArray(playerSlotArray);
+  shuffleCpuSlotArray(cpuSlotArray);
+  
+  // Resulting shuffled array
+  console.log(playerSlotArray);
+  console.log(cpuSlotArray);
+
+  function assignSlot(slot) {
+    if (slot === 0) {
+        console.log(slot + " to slot 1")
+    } else if ((slot === 1)) {
+        console.log(slot + " to slot 2")
+    } else if ((slot === 2)) {
+        console.log(slot + " to slot 3")
+    }
+  }
+
+  assignSlot(playerSlotArrayRock);
+  assignSlot(playerSlotArrayPaper);
+  assignSlot(playerSlotArrayScissors);
+  assignSlot(cpuSlotArrayRock);
+  assignSlot(cpuSlotArrayPaper);
+  assignSlot(cpuSlotArrayScissors);
