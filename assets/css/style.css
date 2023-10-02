@@ -13,6 +13,18 @@ body {
     background-attachment: fixed;
 }
 
+button {
+    background-color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    color: white;
+    background-color: lightcoral;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px lightcoral;
+}
+
 .rps_button_stack > button {
     margin-left: auto;
     margin-right: auto;
@@ -50,13 +62,17 @@ body {
 }
 
 #announcement_board {
-    outline: 1px;
+    outline: 0px;
+    border-radius: 5px;
     outline-style: auto;
     width: 250px;
     height: 30px;
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
+    background-color: lightcoral;
+    box-shadow: 5px 1px 15px lightcoral;
+    color: white;
 }
 
 .rps_button {
