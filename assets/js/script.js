@@ -467,7 +467,7 @@ function revealAlias() {
     }
     let closeSubmitButton = document.getElementById('submit_pick');
     let nextGameButton = document.getElementById('alias_submit_button');
-    closeSubmitButton.innerHTML = "";
+    closeSubmitButton.innerHTML = `<button id="closed_submit_button" >Submit</button>`;
     nextGameButton.innerHTML = `<button onclick="resetGame('what')">Next Game</button>`;
 }
 

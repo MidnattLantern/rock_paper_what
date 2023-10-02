@@ -120,7 +120,8 @@ ul {
 }
 
 #reset_button {
-    width: 70px;
+    margin: 20px;
+    width: 100px;
     height: 50px;   
    }
 
@@ -138,22 +139,20 @@ ul {
 
     #game_window {
         width: 100%;
-        height: 500px;
-        outline: 1px;
-        outline-style: auto;
+        height: 520px;
+        outline: 3px;
+        outline-style: solid;
     }
 
     #player_board {
         margin-left: 0px;
-        margin-right: 20px;
+        margin-right: 10%;
     }
 
     #cpu_board {
-        margin-left: 20px;
+        margin-left: 10%;
         margin-right: 0px;
     }
-    
-
     
 }
 
@@ -166,9 +165,10 @@ ul {
         margin-left: auto;
         margin-right: auto;
         width: 700px;
-        height: 500px;
-        outline: 1px;
-        outline-style: auto;
+        height: 520px;
+        outline: 3px;
+        outline-style: solid;
+        border-radius: 10px;
     }
 
     #player_board {
@@ -179,9 +179,5 @@ ul {
     #cpu_board {
         margin-left: 150px;
         margin-right: 100px;
-    }
-
-    #reset_button {
-
     }
 }
