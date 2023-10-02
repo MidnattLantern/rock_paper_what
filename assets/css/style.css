@@ -26,6 +26,13 @@ ul {
     list-style: none;
 }
 
+p {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .footer {
     color: rgb(255, 232, 236);
 }
@@ -105,7 +112,7 @@ button:hover {
     margin-bottom: 5px;
 }
 
-.game_rules {
+#game_rules {
     margin-top: 100px;
     padding: 20px;
     border-radius: 10px;
@@ -214,7 +221,7 @@ button:hover {
         width: 250px;
     }
 
-    .game_rules {
+    #game_rules {
         width: 100%;
     }
 
@@ -243,7 +250,7 @@ button:hover {
         width: 500px;
     }
 
-    .game_rules {
+    #game_rules {
         width: 1000px;
     }
 
