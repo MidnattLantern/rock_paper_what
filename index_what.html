@@ -10,7 +10,7 @@
     <link href="../rock_paper_what/assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body onload="switchGamemode('what')">
-
+<div class="wallpaper">
     <div class="header">
         <h1>🪨Rock, 🧻Paper, 🍌What?</h1>
     </div>
@@ -38,7 +38,7 @@
                     <button class="rps_button" id="player_slot_3" onclick="playerPickSlot3()">slot 3</button>
                     <br>
                     <div id="submit_pick">
-                        <button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)"> submit </button>
+                        <button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)"> Submit </button>
                     </div>
                     
                 </div>
@@ -47,26 +47,27 @@
     
                 <div id="cpu_board" class="rps_button_stack">
                     <h3>CPU</h3>
-                        <button class="rps_button" id="cpu_slot_1" >slot 1</button>
-                        <button class="rps_button" id="cpu_slot_2" >slot 2</button>
-                        <button class="rps_button" id="cpu_slot_3" >slot 3</button>
-                    <br>
+                    <button class="rps_button" id="cpu_slot_1" >slot 1</button>
+                    <button class="rps_button" id="cpu_slot_2" >slot 2</button>
+                    <button class="rps_button" id="cpu_slot_3" >slot 3</button>
                 </div>
             </div>
+            <br>
             <div id="shuffle_board">
-                <h3><span id="emoji_spotlight">alias</span> is a<span id="emoji_spotlight_reveal">...</span></h3> <br>
+                <h3><span id="emoji_spotlight">alias</span> is a<span id="emoji_spotlight_reveal">...</span></h3>
                 <button id="guess_alias_slot_rock" onclick="guessAliasIs('rock')">🪨</button>
                 <button id="guess_alias_slot_paper" onclick="guessAliasIs('paper')">🧻</button>
                 <button id="guess_alias_slot_scissors" onclick="guessAliasIs('scissors')">✂️</button>
-                <br><br>
+                
                 <div id="alias_submit_button">
                     <button onclick="revealAlias()">Submit</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <div class="footer">
-        footer
+        Find the developer
     </div>
     <script src="../rock_paper_what/assets/js/script.js"></script>
 </body>

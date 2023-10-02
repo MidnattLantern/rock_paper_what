@@ -28,7 +28,6 @@ ul {
 .main {
     width: 100%;
     text-align: center;
-    
 }
 
 .footer {
@@ -47,9 +46,19 @@ ul {
     text-align: center;
 }
 
-.announcement_board {
+.wallpaper {
+    background-color: lightcoral;
+    height: 800px;
+}
+
+#announcement_board {
     outline: 1px;
     outline-style: auto;
+    width: 300px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
 }
 
 .rps_button {
@@ -58,6 +67,11 @@ ul {
     height: 60px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+#game_window {
+    padding: 5px;
+    background-color: white;
 }
 
 #player_slot_1 {
@@ -96,6 +110,15 @@ ul {
     border-radius: 5px;
 }
 
+#shuffle_board {
+    font-size: 25px;
+}
+
+#shuffle_board > button{
+    font-size: 25px;
+    margin-top: 20px;
+}
+
 #guess_alias_slot_rock {
     background-color: white;
     border: solid grey 1px;
@@ -119,6 +142,12 @@ ul {
     height: 50px;
 }
 
+#alias_submit_button > button {
+    margin: 20px;
+    width: 100px;
+    height: 50px;
+}
+
 #reset_button {
     margin: 20px;
     width: 100px;
@@ -139,7 +168,7 @@ ul {
 
     #game_window {
         width: 100%;
-        height: 520px;
+        height: 530px;
         outline: 3px;
         outline-style: solid;
     }
@@ -158,14 +187,14 @@ ul {
 
 @media (min-width: 768px) {
     h1 {
-
+        font-size: 35px;
     }
 
     #game_window {
         margin-left: auto;
         margin-right: auto;
         width: 700px;
-        height: 520px;
+        height: 530px;
         outline: 3px;
         outline-style: solid;
         border-radius: 10px;
