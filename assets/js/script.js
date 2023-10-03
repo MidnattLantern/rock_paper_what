@@ -351,7 +351,7 @@ function guessAliasIs(guess) {
         console.log('player believe alias is a paper');
 
     } else if (guess === 'scissors') {
-        guessAliasHighlight = 'paper';
+        guessAliasHighlight = 'scissors';
         guessAliasHighlightRock.style.borderColor = "grey";
         guessAliasHighlightRock.style.borderWidth = "1px";
         guessAliasHighlightPaper.style.borderColor = "grey";
