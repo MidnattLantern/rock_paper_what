@@ -26,7 +26,13 @@ ul {
     list-style: none;
 }
 
-.footer {
+footer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right:auto;
+    width: 260px;
+    text-align: center;
     color: rgb(255, 232, 236);
 }
 
@@ -68,13 +74,6 @@ button:hover {
     text-align: center;
 }
 
-.footer {
-    width: 100%;
-    text-align: center;
-    position:absolute;
-    bottom: 0px;
-}
-
 .universal_board {
     display: flex;
     flex-direction: row;
@@ -103,6 +102,21 @@ button:hover {
     height: 60px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.socials_icon_style {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    background-color: rgb(38, 34, 42);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+    letter-spacing: 30px;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 #game_rules {
@@ -220,11 +234,6 @@ button:hover {
         text-align: left;
         font-family: Arial, Helvetica, sans-serif;
     }
-
-    #game_rules {
-        width: 100%;
-    }
-
     #game_window {
         width: 100%;
         height: 530px;
@@ -249,6 +258,7 @@ button:hover {
         background-color: rgb(38, 34, 42);
         color: rgb(255, 232, 236);
         text-align: center;
+        width: 100%;
     }
     
 }

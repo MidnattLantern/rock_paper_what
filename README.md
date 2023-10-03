@@ -29,15 +29,38 @@ Wireframes:
 ------
 - Visualisation for front-end appearance was sketched with art software.
 - The following images are wireframes to support as visual references during the early phase:
-![wireframe1]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/assets/images/wireframe.png
+![wireframe1]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/wireframe1.png?raw=true
 
 Testing
 ------
 - Using media queries in CSS, the appearance varies from device to device in a manner that's appropriate for such diversity.
 - Here's how the game layout appear in both desktop and phone:
-!
+![wireframe2]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/wireframe2.png?raw=true
 
 Unsolved bugs:
 ------
 - During gamemode "what", in rare cases, the game will announce "incorrect" even when the player is right.
 - During gamemode "what", in extremely rare cases, the game will expect you to identify an emoji that isn't on the board.
+
+Testing:
+------
+- a version from 28 of october passed the validator tests
+
+Credits:
+- The social media icons appearing at the footer were borrowed from fontawesome.com.
+- The theme font is "Tilt Neon", borrowed from fonts.google.com.
+- The wallpaper was designed by the same developer behind Rock Paper What?
+- The how to play section was written by the same developer behind Rock Paper What, with a little help from GrammarlyGo for grammar and spelling checking.
+
+GitHub deployment:
+------
+- The site was deployed to GitHub pages. Here's how to deploy:
+- In the GitHub repository, navigate to the settings tab, it looks like a cogwheel,
+- From the source section drop-down menu, select the master branch,
+- When the master branch is selected, the page should provide a link to the website.
+- The repository link can be found here - 
+- The live link can be found here - 
+
+Features:
+------
+- 
