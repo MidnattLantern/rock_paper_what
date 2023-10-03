@@ -29,7 +29,13 @@ Wireframes:
 ------
 - Visualisation for front-end appearance was sketched with art software.
 - The following images are wireframes to support as visual references during the early phase:
-![wireframe]
+![wireframe1]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/assets/images/wireframe.png
+
+Testing
+------
+- Using media queries in CSS, the appearance varies from device to device in a manner that's appropriate for such diversity.
+- Here's how the game layout appear in both desktop and phone:
+!
 
 Unsolved bugs:
 ------
