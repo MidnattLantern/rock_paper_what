@@ -1,3 +1,5 @@
+// ver 3 oct 2023 validated
+
 // alias library (first item for both gamemodes, full library for gamemode "what" only)
 let playerRockAlias = ['🪨', '🍌', '👻', '👗', '🦆', '👀'];
 let playerPaperAlias = ['🧻', '🍉', '👽', '👙', '🐸', '👃'];
@@ -579,15 +581,3 @@ function resetGame(gamemode) {
         announce.innerHTML = "New Game";
     }
 }
-
-// on launch
-console.log("player's rock: " + playerRock);
-console.log("player's paper: " + playerPaper);
-console.log("player's scissors: " + playerScissors);
-console.log("computer's rock: " + cpuRock);
-console.log("computer's paper: " + cpuPaper);
-console.log("computer's scissors: " + cpuScissors);
-console.log("playerHighlight: " + playerHighlight);
-console.log("Player's Scoreboard is: " + playerScoreboard);
-console.log("cpuHighlight: " + cpuHighlight);
-console.log("Computer's Scoreboard is: " + cpuScoreboard);
