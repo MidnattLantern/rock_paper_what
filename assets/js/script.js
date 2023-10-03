@@ -78,7 +78,7 @@ function shuffleEmojiSpotlight() {
     } else if (decideId == 1 || decideId == 4) {
         trueId = 'paper';
     } else if (decideId == 2 || decideId == 5) {
-        trueId = 'scissors'
+        trueId = 'scissors';
     }
 }
 

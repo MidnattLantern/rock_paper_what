@@ -203,7 +203,7 @@ button:hover {
 
 #closed_submit_button {
     color: grey;
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
