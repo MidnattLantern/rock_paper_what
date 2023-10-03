@@ -39,8 +39,11 @@ Testing
 
 Unsolved bugs:
 ------
-- During gamemode "what", in rare cases, the game will announce "incorrect" even when the player is right.
-- During gamemode "what", in extremely rare cases, the game will expect you to identify an emoji that isn't on the board.
+- During gamemode "what", in extremely rare cases, the game will expect you to identify an alias emoji that isn't on the board.
+
+Solves bugs:
+------
+- During gamemode "what", if the alias emoji is a scissors, the game will announce "incorrect" even when the player is right. This have been fixed.
 
 Testing:
 ------
@@ -64,3 +67,10 @@ GitHub deployment:
 Features:
 ------
 - 
+
+Future features:
+------
+- For gamemode 'What?', the emoji alias the player need to identify could exclude rock, paper, or scissors.
+- For gamemode 'What?', The game board will only have one original, instad of a chance of two or more of the original rock, paper, or scissors.
+- For gamemode 'What?', Currently on the card layout, rock is always at top, paper at the middle, and scissors at bottom. This setup could be shuffled to prevent predictability.
+- For gamemode 'What?', ther could be a game of ten matches. At the end, a scoreboard could show up to reveal how the player did on all matches.
