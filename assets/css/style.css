@@ -26,13 +26,6 @@ ul {
     list-style: none;
 }
 
-p {
-    padding-left: 100px;
-    padding-right: 100px;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .footer {
     color: rgb(255, 232, 236);
 }
@@ -129,37 +122,37 @@ button:hover {
 }
 
 #player_slot_1 {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
 
 #player_slot_2 {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
 
 #player_slot_3 {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
 
 #cpu_slot_1 {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
 
 #cpu_slot_2 {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
 
 #cpu_slot_3 {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
@@ -174,19 +167,19 @@ button:hover {
 }
 
 #guess_alias_slot_rock {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
 
 #guess_alias_slot_paper {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
 
 #guess_alias_slot_scissors {
-    background-color: white;
+    background-color: rgb(255, 232, 236);
     border: solid grey 1px;
     border-radius: 5px;
 }
@@ -221,6 +214,13 @@ button:hover {
         width: 250px;
     }
 
+    p {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
     #game_rules {
         width: 100%;
     }
@@ -241,6 +241,15 @@ button:hover {
         margin-left: 10%;
         margin-right: 0px;
     }
+
+    #game_rules {
+        margin-top: 100px;
+        padding: 5px;
+        border-radius: 0px;
+        background-color: rgb(38, 34, 42);
+        color: rgb(255, 232, 236);
+        text-align: center;
+    }
     
 }
 
@@ -248,6 +257,13 @@ button:hover {
     h1 {
         font-size: 35px;
         width: 500px;
+    }
+
+    p {
+        padding-left: 100px;
+        padding-right: 100px;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     #game_rules {
@@ -273,5 +289,16 @@ button:hover {
     #cpu_board {
         margin-left: 150px;
         margin-right: 100px;
+    }
+
+    #game_rules {
+        margin-top: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(38, 34, 42);
+        color: rgb(255, 232, 236);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
