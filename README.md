@@ -1,6 +1,9 @@
 Rock Paper What
+======
 Rock Paper What is a website that offers two mini-games for visitors to play. The first game is the classic Rock-Paper Scissors, played in a best-of-ten format. The second game, Rock-Paper-What, is an expanded version of the classic game, with rules that will be explained later in the readme.
 
+User stories:
+------
 - As a visitor, I want to play a gamemode called "normal", which is a Rock-Paper-Scissors in a best-of-ten game.
 - As a visitor, I want to play a gamemode called “What”, that expands on regular Rock-Paper-Scissors where you win by skill and not by luck.
 - As a visitor, I want to be able to switch between the gamemodes at the header.
@@ -22,6 +25,13 @@ Rock Paper What is a website that offers two mini-games for visitors to play. Th
 - As a visitor playing gamemode “what?”, I expect to get a revealed answer if I was right or wrong, and if the emoji I'm identifying was a rock, paper, or scissors.
 - As a visitor, I want to be able to find the developer of the website's social media links in a footer.
 
+Wireframes:
+------
+- Visualisation for front-end appearance was sketched with art software.
+- The following images are wireframes to support as visual references during the early phase:
+![wireframe]
+
 Unsolved bugs:
+------
 - During gamemode "what", in rare cases, the game will announce "incorrect" even when the player is right.
 - During gamemode "what", in extremely rare cases, the game will expect you to identify an emoji that isn't on the board.
