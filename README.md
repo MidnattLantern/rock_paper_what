@@ -27,6 +27,8 @@ User stories:
 
 Wireframes:
 ------
+- NOTE: The appearance of emojis will vary depending on the operative system. The following examples feature Apple's emojis.
+
 - Visualisation for front-end appearance was sketched with art software.
 - The following images are wireframes to support as visual references during the early phase:
 ![wireframe1]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/wireframe1.png?raw=true
@@ -50,19 +52,12 @@ Testing:
 - a version from the 28 of October passed the validator tests
 
 Credits:
+------
 - The social media icons appearing at the footer were borrowed from fontawesome.com.
 - The theme font is "Tilt Neon", borrowed from fonts.google.com.
+- The social media icons appearing in the footer were borrowed from fontawesome.com
 - The wallpaper was designed by the same developer behind Rock Paper What?
 - The how-to-play section was written by the same developer behind Rock Paper What, with a little help from GrammarlyGo for grammar and spelling checking.
-
-GitHub deployment:
-------
-- The site was deployed to GitHub pages. Here's how to deploy:
-- In the GitHub repository, navigate to the settings tab, it looks like a cogwheel,
-- From the source section drop-down menu, select the master branch,
-- When the master branch is selected, the page should provide a link to the website.
-- The repository link can be found here - 
-- The live link can be found here - 
 
 Features:
 ------
@@ -99,9 +94,52 @@ Here is what the game board looks like in gamemode "What?" every alias emoji wil
 - The visitor can find links to the developer's socials in the footer :
 ![demo_footer.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_footer.png?raw=true
 
+grammar
+
 Future features:
+======
+- For gamemode 'What?', the emoji alias the player needs to identify could exclude rock, paper, or scissors.
+- For gamemode 'What?', The game board will only have one original, instead of a chance of two or more of the original rock, paper, or scissors.
+- For gamemode 'What?', Currently on the card layout, rock is always at the top, paper at the middle, and scissors at the bottom. This setup could be shuffled to prevent predictability.
+- For gamemode 'What?', there could be a game of ten matches. At the end, a scoreboard could show up to reveal how the player did in all matches.
+
+Typography and Colour schemes:
+======
+Typography
 ------
-- For gamemode 'What?', the emoji alias the player need to identify could exclude rock, paper, or scissors.
-- For gamemode 'What?', The game board will only have one original, instad of a chance of two or more of the original rock, paper, or scissors.
-- For gamemode 'What?', Currently on the card layout, rock is always at top, paper at the middle, and scissors at bottom. This setup could be shuffled to prevent predictability.
-- For gamemode 'What?', ther could be a game of ten matches. At the end, a scoreboard could show up to reveal how the player did on all matches.
+- Two fonts are being used: Tilt Neon, and Arial.
+- Tilt Neon is the feature font.
+- Arial is used for the section about how to play.
+
+Colour scheme:
+------
+- The theme colour is coral pink.
+- Less important sections, such as header and how-to-play appear black with off-white to draw away attention from the focus point.
+- The focus point is the game area, and it's off-white. It's the brightest element on the website. The text appears black.
+- Highlights and announcements follow the theme colour.
+- The wallpaper has two shades of wine red, a colour that is both non-distracting and radiates personality. 
+
+Technology
+======
+- Development for all parts was done through a computer running macOS.
+- The wallpaper was designed by Alma in Affinity Photo 2, using Apple's emojis.
+- Rock Paper What is hosted by GitHub.
+- All code (except for Font Awesome and Google fonts) was written on Microsoft Visual Studio Code by Alma.
+- All code was written in MS Visual Studio.
+- Debugging was done through MS Edge.
+- Media queries were tested trough MS Edge. The simulated device was: Galaxy Fold (280 x 653)
+- The theme font "Neon Tilt" was borrowed from Google Fonts.
+- The social media icons were borrowed from Font Awesome.
+- Grammar checking was done by using Grammarly.
+
+Deployment
+======
+
+GitHub deployment:
+------
+- The site was deployed to GitHub pages. Here's how to deploy:
+- In the GitHub repository, navigate to the settings tab, it looks like a cogwheel,
+- From the source section drop-down menu, select the master branch,
+- When the master branch is selected, the page should provide a link to the website.
+- The repository link can be found here - 
+- The live link can be found here - 
