@@ -94,9 +94,8 @@ function updatePronoun() {
         gameMatchPronoun = 'rd';
     } else if (gameMatchCount >= 4) {
         gameMatchPronoun = 'th';
-    } else {
     }
-    }
+}
 
 // Alias setup
 function switchGamemode(gamemode) {
@@ -120,7 +119,6 @@ function switchGamemode(gamemode) {
         randomizeCpuAlias();
         ensureOriginalAlias();
         shuffleEmojiSpotlight();
-
         playerSlotSetup1.innerHTML = playerRock;
         playerSlotSetup2.innerHTML = playerPaper;
         playerSlotSetup3.innerHTML = playerScissors;
@@ -143,7 +141,6 @@ function ensureOriginalAlias() {
             playerPaper = playerPaperAlias[0];
         } else if (decideFairGameId === 2) {
             playerScissors = playerScissorsAlias[0];
-        } else {
         }
     }
 }
@@ -153,12 +150,11 @@ function cpuDecideCard() {
     // to ensure choice ID is either 0, 1, or 2
     let decideId = Math.floor(Math.random() * 3);
     if (decideId == 0) {
-        cpuPickSlot1();
+        cpuPick('rock');
     } else if (decideId == 1) {
-        cpuPickSlot2();
+        cpuPick('paper');
     } else if (decideId == 2) {
-        cpuPickSlot3();
-    } else {
+        cpuPick('scissors');
     }
 }
 
@@ -193,124 +189,113 @@ function cpuDecideCard() {
     // to ensure choice ID is either 0, 1, or 2
     let decideId = Math.floor(Math.random() * 3);
     if (decideId == 0) {
-        cpuPickSlot1();
+        cpuPick('rock');
     } else if (decideId == 1) {
-        cpuPickSlot2();
+        cpuPick('paper');
     } else if (decideId == 2) {
-        cpuPickSlot3();
-    } else {
+        cpuPick('scissors');
     }
 }
 
-// Player hightlight
-function playerPickNull() {
-    playerHighlightRock.style.borderColor = "grey";
-    playerHighlightRock.style.borderWidth = "1px";
-    playerHighlightPaper.style.borderColor = "grey";
-    playerHighlightPaper.style.borderWidth = "1px";
-    playerHighlightScissors.style.borderColor = "grey";
-    playerHighlightScissors.style.borderWidth = "1px";
-    playerHighlight = null;
+// card any selection
+function cardSelect(target, subject) {
+    if (target == 'rock') {
+        subject.style.borderColor = "lightcoral";
+        subject.style.borderWidth = "3px";
+    } else if (target == 'paper') {
+        subject.style.borderColor = "lightcoral";
+        subject.style.borderWidth = "3px";
+    } else if (target == 'scissors') {
+        subject.style.borderColor = "lightcoral";
+        subject.style.borderWidth = "3px";
+    }
 }
-function playerPickSlot1() {
-    cpuPickNull();
-    playerHighlightRock.style.borderColor = "lightcoral";
-    playerHighlightRock.style.borderWidth = "2px";
-    playerHighlightPaper.style.borderColor = "grey";
-    playerHighlightPaper.style.borderWidth = "1px";
-    playerHighlightScissors.style.borderColor = "grey";
-    playerHighlightScissors.style.borderWidth = "1px";
-    playerHighlight = "rock";
-}
-function playerPickSlot2() {
-    cpuPickNull();
-    playerHighlightRock.style.borderColor = "grey";
-    playerHighlightRock.style.borderWidth = "1px";
-    playerHighlightPaper.style.borderColor = "lightcoral";
-    playerHighlightPaper.style.borderWidth = "2px";
-    playerHighlightScissors.style.borderColor = "grey";
-    playerHighlightScissors.style.borderWidth = "1px";
-    playerHighlight = "paper";
-}
-function playerPickSlot3() {
-    cpuPickNull();
-    playerHighlightRock.style.borderColor = "grey";
-    playerHighlightRock.style.borderWidth = "1px";
-    playerHighlightPaper.style.borderColor = "grey";
-    playerHighlightPaper.style.borderWidth = "1px";
-    playerHighlightScissors.style.borderColor = "lightcoral";
-    playerHighlightScissors.style.borderWidth = "2px";
-    playerHighlight = "scissors";
+function cardDeselect(target, subject) {
+    if (target == 'rock') {
+        subject.style.borderColor = "grey";
+        subject.style.borderWidth = "1px";
+    } else if (target == 'paper') {
+        subject.style.borderColor = "grey";
+        subject.style.borderWidth = "1px";
+    } else if (target == 'scissors') {
+        subject.style.borderColor = "grey";
+        subject.style.borderWidth = "1px";
+    }
 }
 
-// CPU highlight
-function cpuPickNull() {
-    cpuHighlightRock.style.borderColor = "grey";
-    cpuHighlightRock.style.borderWidth = "1px";
-    cpuHighlightPaper.style.borderColor = "grey";
-    cpuHighlightPaper.style.borderWidth = "1px";
-    cpuHighlightScissors.style.borderColor = "grey";
-    cpuHighlightScissors.style.borderWidth = "1px";
-    cpuHighlight = null;
+// player hightlight input from html
+function playerPick(target) {
+    cpuPick('null');
+    if (target == 'rock') {
+        cardSelect('rock', playerHighlightRock);
+        cardDeselect('paper', playerHighlightPaper);
+        cardDeselect('scissors', playerHighlightScissors);
+        playerHighlight = 'rock';
+    } else if (target == 'paper') {
+        cardDeselect('rock', playerHighlightRock);
+        cardSelect('paper', playerHighlightPaper);
+        cardDeselect('scissors', playerHighlightScissors);
+        playerHighlight = 'paper';
+    } else if (target == 'scissors') {
+        cardDeselect('rock', playerHighlightRock);
+        cardDeselect('paper', playerHighlightPaper);
+        cardSelect('scissors', playerHighlightScissors);
+        playerHighlight = 'scissors';
+    } else if (target == 'null') {
+        cardDeselect('rock', playerHighlightRock);
+        cardDeselect('paper', playerHighlightPaper);
+        cardDeselect('scissors', playerHighlightScissors);
+        playerHighlight = null;
+    }
 }
-function cpuPickSlot1() {
-    cpuHighlightRock.style.borderColor = "lightcoral";
-    cpuHighlightRock.style.borderWidth = "2px";
-    cpuHighlightPaper.style.borderColor = "grey";
-    cpuHighlightPaper.style.borderWidth = "1px";
-    cpuHighlightScissors.style.borderColor = "grey";
-    cpuHighlightScissors.style.borderWidth = "1px";
-    cpuHighlight = "rock";
-}
-function cpuPickSlot2() {
-    cpuHighlightRock.style.borderColor = "grey";
-    cpuHighlightRock.style.borderWidth = "1px";
-    cpuHighlightPaper.style.borderColor = "lightcoral";
-    cpuHighlightPaper.style.borderWidth = "2px";
-    cpuHighlightScissors.style.borderColor = "grey";
-    cpuHighlightScissors.style.borderWidth = "1px";
-    cpuHighlight = "paper";
-}
-function cpuPickSlot3() {
-    cpuHighlightRock.style.borderColor = "grey";
-    cpuHighlightRock.style.borderWidth = "1px";
-    cpuHighlightPaper.style.borderColor = "grey";
-    cpuHighlightPaper.style.borderWidth = "1px";
-    cpuHighlightScissors.style.borderColor = "lightcoral";
-    cpuHighlightScissors.style.borderWidth = "2px";
-    cpuHighlight = "scissors";
+
+// computer hightlight
+function cpuPick(target) {
+    if (target == 'rock') {
+        cardSelect('rock', cpuHighlightRock);
+        cardDeselect('paper', cpuHighlightPaper);
+        cardDeselect('scissors', cpuHighlightScissors);
+        cpuHighlight = 'rock';
+    } else if (target == 'paper') {
+        cardDeselect('rock', cpuHighlightRock);
+        cardSelect('paper', cpuHighlightPaper);
+        cardDeselect('scissors', cpuHighlightScissors);
+        cpuHighlight = 'paper';
+    } else if (target == 'scissors') {
+        cardDeselect('rock', cpuHighlightRock);
+        cardDeselect('paper', cpuHighlightPaper);
+        cardSelect('scissors', cpuHighlightScissors);
+        cpuHighlight = 'scissors';
+    } else if (target == 'null') {
+        cardDeselect('rock', cpuHighlightRock);
+        cardDeselect('paper', cpuHighlightPaper);
+        cardDeselect('scissors', cpuHighlightScissors);
+        cpuHighlight = null;
+    }
 }
 
 // Alias highlight (gamemode 'what' only)
-function guessAliasIs(guess) {
-    if (guess === 'rock') {
+function guessAliasIs(target) {
+    if (target === 'rock') {
+        cardSelect('rock', guessAliasHighlightRock);
+        cardDeselect('paper', guessAliasHighlightPaper);
+        cardDeselect('scissors', guessAliasHighlightScissors);
         guessAliasHighlight = 'rock';
-        guessAliasHighlightRock.style.borderColor = "lightcoral";
-        guessAliasHighlightRock.style.borderWidth = "2px";
-        guessAliasHighlightPaper.style.borderColor = "grey";
-        guessAliasHighlightPaper.style.borderWidth = "1px";
-        guessAliasHighlightScissors.style.borderColor = "grey";
-        guessAliasHighlightScissors.style.borderWidth = "1px";
-
-    } else if (guess === 'paper') {
+    } else if (target === 'paper') {
+        cardDeselect('rock', guessAliasHighlightRock);
+        cardSelect('paper', guessAliasHighlightPaper);
+        cardDeselect('scissors', guessAliasHighlightScissors);
         guessAliasHighlight = 'paper';
-        guessAliasHighlightRock.style.borderColor = "grey";
-        guessAliasHighlightRock.style.borderWidth = "1px";
-        guessAliasHighlightPaper.style.borderColor = "lightcoral";
-        guessAliasHighlightPaper.style.borderWidth = "2px";
-        guessAliasHighlightScissors.style.borderColor = "grey";
-        guessAliasHighlightScissors.style.borderWidth = "1px";
-
-    } else if (guess === 'scissors') {
+    } else if (target === 'scissors') {
+        cardDeselect('rock', guessAliasHighlightRock);
+        cardDeselect('paper', guessAliasHighlightPaper);
+        cardSelect('scissors', guessAliasHighlightScissors);
         guessAliasHighlight = 'scissors';
-        guessAliasHighlightRock.style.borderColor = "grey";
-        guessAliasHighlightRock.style.borderWidth = "1px";
-        guessAliasHighlightPaper.style.borderColor = "grey";
-        guessAliasHighlightPaper.style.borderWidth = "1px";
-        guessAliasHighlightScissors.style.borderColor = "lightcoral";
-        guessAliasHighlightScissors.style.borderWidth = "2px";
-
-    } else {
+    } else if (target === 'null') {
+        cardDeselect('rock', guessAliasHighlightRock);
+        cardDeselect('paper', guessAliasHighlightPaper);
+        cardDeselect('scissors', guessAliasHighlightScissors);
+        guessAliasHighlight = null;
     }
 }
 
@@ -349,7 +334,6 @@ function addScoreTo(winningContribute) {
             cpuScoreSlot.innerHTML = countCpuScoreSlot;
             cpuScoreboard = cpuScoreboard + 1;
         }
-    } else {
     }
 }
 
@@ -391,11 +375,11 @@ function revealAlias() {
     } else {
         announce.innerHTML = "Incorrect...";
     }
-    if (trueId == 'rock') {
+    if (trueId === 'rock') {
         reveal.innerHTML = " 🪨";
-    } else if (trueId == 'paper') {
+    } else if (trueId === 'paper') {
         reveal.innerHTML = " 🧻";
-    } else if (trueId == 'scissors') {
+    } else if (trueId === 'scissors') {
         reveal.innerHTML = " ✂️";
     }
     let closeSubmitButton = document.getElementById('submit_pick');
@@ -436,7 +420,6 @@ function engageGame(player, cpu) {
                 } else if (player == "scissors" && cpu == "scissors") {
                     addScoreTo('draw');
                     progressGame();
-                } else {
                 }
     } else {
         announce.innerHTML = "Please, pick a card";
@@ -446,6 +429,12 @@ function engageGame(player, cpu) {
 function resetGame(gamemode) {
     if (gamemode == 'normal') {
         if (confirm('The game will be reset upon clicking "OK"! ') == true) {
+            cardDeselect('rock', cpuHighlightRock);
+            cardDeselect('paper', cpuHighlightPaper);
+            cardDeselect('scissors', cpuHighlightScissors);
+            cardDeselect('rock', playerHighlightRock);
+            cardDeselect('paper', playerHighlightPaper);
+            cardDeselect('scissors', playerHighlightScissors);
             playerHighlight = null;
             cpuHighlight = null;
             gameMatchCount = 1;
@@ -455,8 +444,6 @@ function resetGame(gamemode) {
             gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
             playerScoreSlot.innerHTML = countPlayerScoreSlot;
             cpuScoreSlot.innerHTML = countCpuScoreSlot;
-            playerPickNull();
-            cpuPickNull();
             announce.innerHTML = "Game reset";
             // takes back the submit button upon reset
             let reopenSubmitButton = document.getElementById('submit_pick');
@@ -466,31 +453,15 @@ function resetGame(gamemode) {
     } else if (gamemode == 'what') {
         // SwitchGamemode already shuffle the alias emojis
         switchGamemode('what');
-
-        cpuHighlightRock.style.borderColor = "grey";
-        cpuHighlightRock.style.borderWidth = "1px";
-        cpuHighlightPaper.style.borderColor = "grey";
-        cpuHighlightPaper.style.borderWidth = "1px";
-        cpuHighlightScissors.style.borderColor = "grey";
-        cpuHighlightScissors.style.borderWidth = "1px";
-
-        playerHighlightRock.style.borderColor = "grey";
-        playerHighlightRock.style.borderWidth = "1px";
-        playerHighlightPaper.style.borderColor = "grey";
-        playerHighlightPaper.style.borderWidth = "1px";
-        playerHighlightScissors.style.borderColor = "grey";
-        playerHighlightScissors.style.borderWidth = "1px";
-
-        guessAliasHighlightRock.style.borderColor = "grey";
-        guessAliasHighlightRock.style.borderWidth = "1px";
-        guessAliasHighlightPaper.style.borderColor = "grey";
-        guessAliasHighlightPaper.style.borderWidth = "1px";
-        guessAliasHighlightScissors.style.borderColor = "grey";
-        guessAliasHighlightScissors.style.borderWidth = "1px";
-
-        playerHighlight = null;
-        cpuHighlight = null;
-        guessAliasHighlight = null;
+        cardDeselect('rock', cpuHighlightRock);
+        cardDeselect('paper', cpuHighlightPaper);
+        cardDeselect('scissors', cpuHighlightScissors);
+        cardDeselect('rock', playerHighlightRock);
+        cardDeselect('paper', playerHighlightPaper);
+        cardDeselect('scissors', playerHighlightScissors);
+        cardDeselect('rock', guessAliasHighlightRock);
+        cardDeselect('paper', guessAliasHighlightPaper);
+        cardDeselect('scissors', guessAliasHighlightScissors);
         let resetAliasReveal = document.getElementById('emoji_spotlight_reveal');
         let reopenSubmitButton = document.getElementById('submit_pick');
         let reopenAliasSubmitButton = document.getElementById('alias_submit_button');

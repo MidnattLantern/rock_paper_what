@@ -37,9 +37,9 @@
 
                 <div id="player_board" class="rps_button_stack">
                     <h3>Player</h3>
-                    <button class="rps_button" id="player_slot_1" onclick="playerPickSlot1()">slot 1</button>
-                    <button class="rps_button" id="player_slot_2" onclick="playerPickSlot2()">slot 2</button>
-                    <button class="rps_button" id="player_slot_3" onclick="playerPickSlot3()">slot 3</button>
+                    <button class="rps_button" id="player_slot_1" onclick="playerPick('rock')">slot 1</button>
+                    <button class="rps_button" id="player_slot_2" onclick="playerPick('paper')">slot 2</button>
+                    <button class="rps_button" id="player_slot_3" onclick="playerPick('scissors')">slot 3</button>
                     <br>
                     <div id="submit_pick">
                         <button onclick="cpuDecideCard(), engageGame(playerHighlight, cpuHighlight)"> Submit </button>
