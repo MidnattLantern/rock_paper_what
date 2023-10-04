@@ -26,6 +26,7 @@ ul {
     list-style: none;
 }
 
+/* Appearance for socials */
 footer {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -33,24 +34,25 @@ footer {
     margin-right:auto;
     width: 260px;
     text-align: center;
-    color: rgb(255, 232, 236);
+    color: #ffe8ec;
 }
 
+/* The wine red wallpaper */
 body {
     background-image: url("../images/emoji_wallpaper.png");
     background-attachment: fixed;
 }
 
 button {
-    background-color: rgb(255, 232, 236);
+    background-color: #ffe8ec;
     border-radius: 5px;
 }
 
 button:hover {
-    color: white;
-    background-color: lightcoral;
+    color: #ffffff;
+    background-color: #f08080;
     border-radius: 5px;
-    box-shadow: 0px 1px 10px lightcoral;
+    box-shadow: 0px 1px 10px #f08080;
 }
 
 .rps_button_stack > button {
@@ -91,9 +93,9 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
-    background-color: lightcoral;
-    box-shadow: 5px 1px 15px lightcoral;
-    color: white;
+    background-color: #f08080;
+    box-shadow: 5px 1px 15px #f08080;
+    color: #ffffff;
 }
 
 .rps_button {
@@ -104,6 +106,7 @@ button:hover {
     margin-bottom: 5px;
 }
 
+/* Appearance for social media icons */
 .socials_icon_style {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -124,47 +127,49 @@ button:hover {
     box-shadow: 0px 0px;
 }
 
+/* the only white window */
 #game_window {
     padding: 5px;
-    background-color: rgb(255, 232, 236);
+    background-color: #ffe8ec;
 }
 
 #player_slot_1 {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
 #player_slot_2 {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
 #player_slot_3 {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
 #cpu_slot_1 {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
 #cpu_slot_2 {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
 #cpu_slot_3 {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
+/* gamemode what only */
 #shuffle_board {
     font-size: 25px;
 }
@@ -175,20 +180,20 @@ button:hover {
 }
 
 #guess_alias_slot_rock {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
 #guess_alias_slot_paper {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
 #guess_alias_slot_scissors {
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
@@ -210,9 +215,9 @@ button:hover {
    }
 
 #closed_submit_button {
-    color: grey;
-    background-color: rgb(255, 232, 236);
-    border: solid grey 1px;
+    color: #808080;
+    background-color: #ffe8ec;
+    border: solid #808080 1px;
     border-radius: 5px;
 }
 
@@ -248,8 +253,8 @@ button:hover {
     #game_rules {
         margin-top: 100px;
         border-radius: 0px;
-        background-color: rgb(38, 34, 42);
-        color: rgb(255, 232, 236);
+        background-color: #26222a;
+        color: #ffe8ec;
         text-align: center;
         width: 100%;
     }
@@ -281,7 +286,7 @@ button:hover {
         outline: 3px;
         outline-style: solid;
         border-radius: 10px;
-        box-shadow: 10px 1px 20px rgb(0, 0, 0);
+        box-shadow: 10px 1px 20px #000000;
     }
 
     #player_board {
@@ -298,8 +303,8 @@ button:hover {
         margin-top: 100px;
         padding: 20px;
         border-radius: 10px;
-        background-color: rgb(38, 34, 42);
-        color: rgb(255, 232, 236);
+        background-color: #26222a;
+        color: #ffe8ec;
         text-align: center;
         margin-left: auto;
         margin-right: auto;

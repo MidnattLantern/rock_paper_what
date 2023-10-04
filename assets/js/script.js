@@ -200,25 +200,25 @@ function cpuDecideCard() {
 // card any selection
 function cardSelect(target, subject) {
     if (target == 'rock') {
-        subject.style.borderColor = "lightcoral";
+        subject.style.borderColor = "#f08080";
         subject.style.borderWidth = "3px";
     } else if (target == 'paper') {
-        subject.style.borderColor = "lightcoral";
+        subject.style.borderColor = "#f08080";
         subject.style.borderWidth = "3px";
     } else if (target == 'scissors') {
-        subject.style.borderColor = "lightcoral";
+        subject.style.borderColor = "#f08080";
         subject.style.borderWidth = "3px";
     }
 }
 function cardDeselect(target, subject) {
     if (target == 'rock') {
-        subject.style.borderColor = "grey";
+        subject.style.borderColor = "#808080";
         subject.style.borderWidth = "1px";
     } else if (target == 'paper') {
-        subject.style.borderColor = "grey";
+        subject.style.borderColor = "#808080";
         subject.style.borderWidth = "1px";
     } else if (target == 'scissors') {
-        subject.style.borderColor = "grey";
+        subject.style.borderColor = "#808080";
         subject.style.borderWidth = "1px";
     }
 }
@@ -338,7 +338,7 @@ function addScoreTo(winningContribute) {
 }
 
 // announce engeagement
-function highlightCondition(player, cpu) {
+function highlightCondition() {
     // gamemode controllant
     if (gamemodeVar === "normal") {
         announce.innerHTML = playerHighlight + dominantContributeIcon + cpuHighlight;
