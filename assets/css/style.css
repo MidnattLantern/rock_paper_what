@@ -126,7 +126,8 @@ button:hover {
     justify-content: center;
 }
 
-/* Cards that cannot be visually hovered */
+/* Cards that cannot be visually hovered, since all button elements are hoverable by default,
+ following non-hoverable elemets are treaetd as exceptions */
 #cpu_slot_1:hover, #cpu_slot_2:hover, #cpu_slot_3:hover, #closed_submit_button:hover {
     box-shadow: 0px 0px;
 }

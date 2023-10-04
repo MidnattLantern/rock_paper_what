@@ -1,6 +1,8 @@
 // ver 3 oct 2023 validated
 
-// alias library (first item for both gamemodes, full library for gamemode "what" only)
+/* alias library (first item for both gamemodes, full library for gamemode "what" only).
+This is the only const with content that won't ever be modified troughout gameplay.
+*/
 const playerRockAlias = ['🪨', '🍌', '👻', '👗', '🦆', '👀'];
 const playerPaperAlias = ['🧻', '🍉', '👽', '👙', '🐸', '👃'];
 const playerScissorsAlias = ['✂️', '🍋', '💀', '👘', '😸', '👄'];
@@ -8,7 +10,7 @@ const cpuRockAlias = ['🪨', '🧅', '🍹', '💻', '🥸', '🌹'];
 const cpuPaperAlias = ['🧻', '🥑', '🍷', '📱', '😴', '🌳'];
 const cpuScissorsAlias = ['✂️', '🍅', '🍺', '🖥️', '😍', '🪴'];
 
-// ID that decides which emoji to slice from alias library (gamemode "what" only)
+// ID that decides which emoji to slice from alias library (gamemode "what" only).
 let randomPlayerRockId = null;
 let randomPlayerPaperId = null;
 let randomPlayerScissorsId = null;
@@ -105,6 +107,7 @@ function switchGamemode(gamemode) {
     let cpuSlotSetup1 = document.getElementById("cpu_slot_1");
     let cpuSlotSetup2 = document.getElementById("cpu_slot_2");
     let cpuSlotSetup3 = document.getElementById("cpu_slot_3");
+    
     if (gamemode === 'normal') {
         gamemodeVar = 'normal';
         playerSlotSetup1.innerHTML = playerRockAlias[0];
@@ -113,6 +116,7 @@ function switchGamemode(gamemode) {
         cpuSlotSetup1.innerHTML = cpuRockAlias[0];
         cpuSlotSetup2.innerHTML = cpuPaperAlias[0];
         cpuSlotSetup3.innerHTML = cpuScissorsAlias[0];
+
     } else if (gamemode === 'what') {
         gamemodeVar = 'what';
         randomizePlayerAlias();
@@ -158,7 +162,7 @@ function cpuDecideCard() {
     }
 }
 
-// gamemode 'what' only
+// gamemode 'what' only Library for spotlight will be updated
 function randomizePlayerAlias() {
     randomPlayerRockId = Math.floor(Math.random() * 6);
     randomPlayerPaperId = Math.floor(Math.random() * 6);
@@ -166,12 +170,11 @@ function randomizePlayerAlias() {
     playerRock = playerRockAlias[randomPlayerRockId];
     playerPaper = playerPaperAlias[randomPlayerPaperId];
     playerScissors = playerScissorsAlias[randomPlayerScissorsId];
-    // update the library for spotlight (needs to be repeated for CPU)
     emojiSpotlightLibrary = [playerRock, playerPaper, 
         playerScissors, cpuRock, cpuPaper, cpuScissors];
 }
 
-//gamemode 'what' only
+//gamemode 'what' only. Library for spotlight will be updated
 function randomizeCpuAlias() {
     randomCpuRockId = Math.floor(Math.random() * 6);
     randomCpuPaperId = Math.floor(Math.random() * 6);
@@ -179,14 +182,12 @@ function randomizeCpuAlias() {
     cpuRock = cpuRockAlias[randomCpuRockId];
     cpuPaper = cpuPaperAlias[randomCpuPaperId];
     cpuScissors = cpuScissorsAlias[randomCpuScissorsId];
-    // update the library for spotlight
     emojiSpotlightLibrary = [playerRock, playerPaper, 
         playerScissors, cpuRock, cpuPaper, cpuScissors];
 }
 
-// computer will pick a card at random
+// computer will pick a card at random, choice ID will be either 0, 1, or 2
 function cpuDecideCard() {
-    // to ensure choice ID is either 0, 1, or 2
     let decideId = Math.floor(Math.random() * 3);
     if (decideId == 0) {
         cpuPick('rock');
@@ -299,7 +300,6 @@ function guessAliasIs(target) {
     }
 }
 
-// announce 'pick a card'
 function announcePickCard() {
     announce.innerHTML = "pick a card";
 }
@@ -308,7 +308,6 @@ function announcePickCard() {
 function addScoreTo(winningContribute) {
     if (winningContribute === 'player') {
         dominantContributeIcon = " > ";
-        // update score for end-user interface only for "normal" gamemode
         if (gamemodeVar === "normal") {
             playerScoreboard = playerScoreboard + 1;
             countPlayerScoreSlot = countPlayerScoreSlot + 1;
@@ -316,7 +315,6 @@ function addScoreTo(winningContribute) {
         }
     } else if (winningContribute === 'cpu') {
         dominantContributeIcon = " < ";
-        // update score for end-user interface only for "normal" gamemode
         if (gamemodeVar === "normal") {
             cpuScoreboard = cpuScoreboard + 1;
             countCpuScoreSlot = countCpuScoreSlot + 1;
@@ -324,12 +322,10 @@ function addScoreTo(winningContribute) {
         }
     } else if (winningContribute === 'draw') {
         dominantContributeIcon = " = ";
-        // update score for end-user interface only for "normal" gamemode
         if (gamemodeVar === "normal") {
             playerScoreboard = playerScoreboard + 1;
             countPlayerScoreSlot = countPlayerScoreSlot + 1;
             playerScoreSlot.innerHTML = countPlayerScoreSlot;
-            // update score for end-user interface only for "normal" gamemode
             countCpuScoreSlot = countCpuScoreSlot + 1;
             cpuScoreSlot.innerHTML = countCpuScoreSlot;
             cpuScoreboard = cpuScoreboard + 1;
@@ -337,9 +333,8 @@ function addScoreTo(winningContribute) {
     }
 }
 
-// announce engeagement
+// announce engeagement, ? if gamemode what
 function highlightCondition() {
-    // gamemode controllant
     if (gamemodeVar === "normal") {
         announce.innerHTML = playerHighlight + dominantContributeIcon + cpuHighlight;
     } else if (gamemodeVar === "what") {
@@ -347,9 +342,11 @@ function highlightCondition() {
     }
 }
 
-// event that happens after player clicks "submit"
+/* event that happens after player clicks "submit"
+Submit button will be shut down after match 10 or alias check, which one
+ depending on gamemode
+*/
 function progressGame() {
-    // gamemode controllant
     if (gamemodeVar === "normal") {
         if (gameMatchCount < 10) {
             highlightCondition();
@@ -358,7 +355,6 @@ function progressGame() {
             gameCounterSlot.innerHTML = gameMatchCount + gameMatchPronoun;
         } else if (gameMatchCount == 10) {
             announce.innerHTML = "Game over";
-            // remove the submit button when Game Over appear
             let closeSubmitButton = document.getElementById('submit_pick');
             closeSubmitButton.innerHTML = `<button id="closed_submit_button" >Submit</button>`;
         }
@@ -388,10 +384,10 @@ function revealAlias() {
     nextGameButton.innerHTML = `<button onclick="resetGame('what')">Next Game</button>`;
 }
 
-// Conditions for what contribute will win based on picked card, (player, cpu) should be connected to "playerHighlight"
+/* Conditions for what contribute will win based on picked card, (player, cpu) should be connected to "playerHighlight".
+Ensuring the match can only be initiated if both contributes have mad a highlight.
+*/
 function engageGame(player, cpu) {
-
-        // To ensure the game can only be initiated when both contributes have made a choice
         if (playerHighlight != null && cpuHighlight != null) {
                 if (player == "rock" && cpu == "rock") {
                     addScoreTo('draw');
@@ -425,7 +421,7 @@ function engageGame(player, cpu) {
         announce.innerHTML = "Please, pick a card";
     }
 }
-
+// preventing accidental gamemode switch for the navigation bar
 function switchGamemodeAlert() {
     if (gamemodeVar == 'normal') {
         if (confirm('Switching gamemode to "what?" upon clicking "OK"!') == true) {
@@ -438,6 +434,8 @@ function switchGamemodeAlert() {
     }
 }
 
+/* Deslects all cards, reset scoreboard for normal gamemode, if submit button was closed, it will be reopened
+*/
 function resetGame(gamemode) {
     if (gamemode == 'normal') {
         if (confirm('The game will be reset upon clicking "OK"! ') == true) {
@@ -457,13 +455,11 @@ function resetGame(gamemode) {
             playerScoreSlot.innerHTML = countPlayerScoreSlot;
             cpuScoreSlot.innerHTML = countCpuScoreSlot;
             announce.innerHTML = "Game reset";
-            // takes back the submit button upon reset
             let reopenSubmitButton = document.getElementById('submit_pick');
             reopenSubmitButton.innerHTML = `<button onclick="cpuDecideCard(),
              engageGame(playerHighlight, cpuHighlight)">Submit</button>`;
             }
     } else if (gamemode == 'what') {
-        // SwitchGamemode already shuffle the alias emojis
         switchGamemode('what');
         cardDeselect('rock', cpuHighlightRock);
         cardDeselect('paper', cpuHighlightPaper);
