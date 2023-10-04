@@ -426,6 +426,18 @@ function engageGame(player, cpu) {
     }
 }
 
+function switchGamemodeAlert() {
+    if (gamemodeVar == 'normal') {
+        if (confirm('Switching gamemode to "what?" upon clicking "OK"!') == true) {
+            document.getElementById('switchGamemodeButton').href = '../rock_paper_what/index_what.html';
+        }
+    } else if (gamemodeVar == 'what') {
+        if (confirm('Switching gamemode to "normal" upon clicking "OK"!') == true) {
+            document.getElementById('switchGamemodeButton').href = '../rock_paper_what/index.html';
+        }
+    }
+}
+
 function resetGame(gamemode) {
     if (gamemode == 'normal') {
         if (confirm('The game will be reset upon clicking "OK"! ') == true) {
