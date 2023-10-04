@@ -86,7 +86,7 @@ Credits:
 - The how-to-play section was written by the same developer behind Rock Paper What, with a little help from GrammarlyGo for grammar and spelling checking.
 
 Features:
-------
+======
 - The visitor can easily switch gamemode by clicking this text :
 ![demo_switch.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_switch.png
 
@@ -120,7 +120,20 @@ Here is what the game board looks like in gamemode "What?" every alias emoji wil
 - The visitor can find links to the developer's socials in the footer :
 ![demo_footer.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_footer.png
 
-grammar
+Gamemode Normal
+------
+- This is the gamemode that will appear when the user visits the webpage
+- The game counts to ten for each match, when the game surpasses 10, the "announcement board" will say "Game over" and the submit button will be disabled.
+- If the visitor clicks "switch gamemode" a confirmation box will appear, upon clicking "ok", the user will be sent to a new window, gamemode "what"
+
+Gamemode What
+------
+- This window is similar to gamemode "normal", except the scoreboard and match counter have been replaced with an alias emoji, and three options: rock, paper, and scissors, similar to the cards in gamemode "normal"
+- As for the player's and computer's card sections, the rock, the paper, and the scissors have been replaced with a random emoji. Each reload and reset shuffle among a random set of emojis, so each match is unique and unpredictable
+- This gamemode does not count a scoreboard or progress each match, it's a duel that can be played endlessly
+- the match ends when the player clicks the lower centre "submit" button
+- Upon clicking the lower centre submit button, the lower submit button is replaced with a "Next Game" button. The "announcement board" will reveal how the player did, and the alias text at the bottom will reveal an answer. The submit button found at the player's card's section is temporarily disabled until the player clicks the "Next game button".
+
 
 Future features:
 ======
