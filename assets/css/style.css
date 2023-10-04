@@ -4,6 +4,7 @@
     font-family: 'Tilt Neon', cursive;
 }
 
+/* Font size depending on media queries */
 h1 {
     color: #ffe8ec;
     background-color: #26222a;
@@ -12,6 +13,8 @@ h1 {
     margin-top: 10px;
     border-radius: 10px;
 }
+
+/* appearance for navigation bar*/
 a, .navigation_bar {
     color: #ffe8ec;
     text-decoration: none;
@@ -22,6 +25,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* appearance for social media footer */
 ul {
     list-style: none;
 }
@@ -133,6 +137,7 @@ button:hover {
     background-color: #ffe8ec;
 }
 
+/* Each "slot" will change appearance by scrpit.JS depending on what card the player is highlighting*/
 #player_slot_1 {
     background-color: #ffe8ec;
     border: solid #808080 1px;
@@ -169,15 +174,7 @@ button:hover {
     border-radius: 5px;
 }
 
-/* gamemode what only */
-#shuffle_board {
-    font-size: 25px;
-}
 
-#shuffle_board > button{
-    font-size: 25px;
-    margin-top: 20px;
-}
 
 #guess_alias_slot_rock {
     background-color: #ffe8ec;
@@ -195,6 +192,15 @@ button:hover {
     background-color: #ffe8ec;
     border: solid #808080 1px;
     border-radius: 5px;
+}
+
+#shuffle_board {
+    font-size: 25px;
+}
+
+#shuffle_board > button{
+    font-size: 25px;
+    margin-top: 20px;
 }
 
 #submit_pick > button{
@@ -221,6 +227,7 @@ button:hover {
     border-radius: 5px;
 }
 
+/* Appearance of website friendly for small devices */
 @media (max-width: 768px) {
     h1 {
         font-size: 20px;
@@ -261,6 +268,7 @@ button:hover {
     
 }
 
+/* Default appearance of website for large devices */
 @media (min-width: 768px) {
     h1 {
         font-size: 35px;

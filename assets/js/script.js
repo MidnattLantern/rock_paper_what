@@ -1,12 +1,12 @@
 // ver 3 oct 2023 validated
 
 // alias library (first item for both gamemodes, full library for gamemode "what" only)
-let playerRockAlias = ['🪨', '🍌', '👻', '👗', '🦆', '👀'];
-let playerPaperAlias = ['🧻', '🍉', '👽', '👙', '🐸', '👃'];
-let playerScissorsAlias = ['✂️', '🍋', '💀', '👘', '😸', '👄'];
-let cpuRockAlias = ['🪨', '🧅', '🍹', '💻', '🥸', '🌹'];
-let cpuPaperAlias = ['🧻', '🥑', '🍷', '📱', '😴', '🌳'];
-let cpuScissorsAlias = ['✂️', '🍅', '🍺', '🖥️', '😍', '🪴'];
+const playerRockAlias = ['🪨', '🍌', '👻', '👗', '🦆', '👀'];
+const playerPaperAlias = ['🧻', '🍉', '👽', '👙', '🐸', '👃'];
+const playerScissorsAlias = ['✂️', '🍋', '💀', '👘', '😸', '👄'];
+const cpuRockAlias = ['🪨', '🧅', '🍹', '💻', '🥸', '🌹'];
+const cpuPaperAlias = ['🧻', '🥑', '🍷', '📱', '😴', '🌳'];
+const cpuScissorsAlias = ['✂️', '🍅', '🍺', '🖥️', '😍', '🪴'];
 
 // ID that decides which emoji to slice from alias library (gamemode "what" only)
 let randomPlayerRockId = null;
