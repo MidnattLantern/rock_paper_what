@@ -31,17 +31,18 @@ Wireframes:
 
 - Visualisation for front-end appearance was sketched with art software.
 - The following images are wireframes to support as visual references during the early phase:
-![wireframe1]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/wireframe1.png?raw=true
+![wireframe1]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/wireframe1.png
 
 Testing
 ------
 - Using media queries in CSS, the appearance varies from device to device in a manner that's appropriate for such diversity.
 - Here's how the game layout appears in both desktop and phone:
-![wireframe2]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/wireframe2.png?raw=true
+![wireframe2]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/wireframe2.png
 
 Unsolved bugs:
 ------
 - During gamemode "what", in extremely rare cases, the game will expect you to identify an alias emoji that isn't on the board.
+- Some browsers, such as Safari may not warn the visitor that they'll be switching gamemode. 
 
 Solves bugs:
 ------
@@ -62,37 +63,37 @@ Credits:
 Features:
 ------
 - The visitor can easily switch gamemode by clicking this text :
-![demo_switch.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_switch.png?raw=true
+![demo_switch.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_switch.png
 
 - The visitor can easily navigate to the how to play section by clicking this text :
-![demo_howto.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_howto.png?raw=true
+![demo_howto.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_howto.png
 
 - Here's what the game board looks like in gamemode "normal" :
-![demo_board.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_board.png?raw=true
+![demo_board.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_board.png
 
 Here is what the game board looks like in gamemode "What?" every alias emoji will be random for each match or reload :
-![demo_what.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_what.png?raw=true
+![demo_what.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_what.png
 
 - Here's how the appearance of a card changes when the player highlights that card :
-![demo_highlight.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_highlight.png?raw=true
+![demo_highlight.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_highlight.png
 
 - The player initiates the match by clicking "submit", this is the appearance when hovering :
-![demo_submit]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_submit.png?raw=true
+![demo_submit]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_submit.png
 
 - The player can at any time during gamemode "normal" reset the game by clicking "reset game", this is the appearance when hovering :
-![demo_reset]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_reset.png?raw=true
+![demo_reset]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_reset.png
 
 - The player submits their guess on the alias during gamemode "what" in the same fashion as they highlight and initiate a game duel :
-![demo_what_submit]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_what_submit.png?raw=true
+![demo_what_submit]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_what_submit.png
 
 - The submit button will appear ghosted and cannot be clicked :
-![demo_disabled.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_disabled.png?raw=true
+![demo_disabled.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_disabled.png
 
 - The answer for the alias emoji in gamemode “What?” is revealed at this spot. In this case, it's Paper disguised as an alien, another emoji will appear for each match :
-![demo_what_reveal.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_what_reveal.png?raw=true
+![demo_what_reveal.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_what_reveal.png
 
 - The visitor can find links to the developer's socials in the footer :
-![demo_footer.png]https://github.com/MidnattLantern/rock_paper_what/blob/main/readme_images/features_demostration/demo_footer.png?raw=true
+![demo_footer.png]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/features_demostration/demo_footer.png
 
 grammar
 
