@@ -112,7 +112,7 @@ button:hover {
     margin-top: 10px;
     margin-bottom: 10px;
     list-style-type: none;
-    letter-spacing: 30px;
+    letter-spacing: 25px;
     font-size: 30px;
     text-align: center;
     display: flex;
@@ -122,17 +122,6 @@ button:hover {
 /* Cards that cannot be visually hovered */
 #cpu_slot_1:hover, #cpu_slot_2:hover, #cpu_slot_3:hover, #closed_submit_button:hover {
     box-shadow: 0px 0px;
-}
-
-#game_rules {
-    margin-top: 100px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgb(38, 34, 42);
-    color: rgb(255, 232, 236);
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #game_window {
@@ -234,13 +223,13 @@ button:hover {
     }
 
     p {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
         text-align: left;
         font-family: Arial, Helvetica, sans-serif;
     }
+
     #game_window {
-        width: 100%;
         height: 530px;
         outline: 3px;
         outline-style: solid;
@@ -258,7 +247,6 @@ button:hover {
 
     #game_rules {
         margin-top: 100px;
-        padding: 5px;
         border-radius: 0px;
         background-color: rgb(38, 34, 42);
         color: rgb(255, 232, 236);
