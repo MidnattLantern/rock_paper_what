@@ -25,66 +25,6 @@ User stories:
 - As a visitor playing gamemode “what?”, I expect to get a revealed answer if I was right or wrong, and if the emoji I'm identifying was a rock, paper, or scissors.
 - As a visitor, I want to be able to find the developer of the website's social media links in a footer.
 
-Wireframes:
-------
-- NOTE: The appearance of emojis will vary depending on the operative system. The following examples feature Apple's emojis.
-
-- Visualisation for front-end appearance was sketched with art software.
-- The following images are wireframes to support as visual references during the early phase:
-![wireframe1]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/wireframe1.png
-
-Testing
-------
-- Using media queries in CSS, the appearance varies from device to device in a manner that's appropriate for such diversity.
-- Here's how the game layout appears in both desktop and phone:
-![wireframe2]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/wireframe2.png
-
-Unsolved bugs:
-------
-- During gamemode "what", in extremely rare cases, the game will expect you to identify an alias emoji that isn't on the board.
-- Some browsers, such as Safari may not warn the visitor that they'll be switching gamemode. 
-
-Solves bugs:
-------
-- During gamemode "what", if the alias emoji is scissors, the game will announce "incorrect" even when the player is right. This has been fixed.
-
-Testing:
-======
-CSS jigsaw:
-------
-- https://jigsaw.w3.org/css-validator/
-- The CSS code was checked trough the CSS Jigsaw, here's how:
-- Click the 'by direct input' tab
-- Pase all of the CSS code, and click "check"
-- If there are any errors, the validator will reveal what line the warning is
-- As of version 4:th October 2023, there are no errors
-
-HTML validation:
-------
-- https://validator.w3.org
-- The HTML code was checked trough the HTML validator, here's how:
-- Click the 'Validate by direct input' tab
-- Paste all of the HTML code, and click "Check"
-- If there are any errorsm the validator will reveal what line the warning is
-- As of version 4:th October 2023, there are no errors
-
-JShint:
-- https://jshint.com
-- The Javascript code was checked trough the JSHint, here's how:
-- Erase all sample code
-- Paste all of the Javascript code
-- The right section of the website reveal warnings, and where to find the warning
-- Keep in mind: warnings are not errors, some warnings such as unused variables can be ignored
-- As of version 4:th October 2023, there are no errors
-
-Credits:
-------
-- The social media icons appearing at the footer were borrowed from fontawesome.com.
-- The theme font is "Tilt Neon", borrowed from fonts.google.com.
-- The social media icons appearing in the footer were borrowed from fontawesome.com
-- The wallpaper was designed by the same developer behind Rock Paper What?
-- The how-to-play section was written by the same developer behind Rock Paper What, with a little help from GrammarlyGo for grammar and spelling checking.
-
 Features:
 ======
 - The visitor can easily switch gamemode by clicking this text :
@@ -133,7 +73,12 @@ Gamemode What
 - This gamemode does not count a scoreboard or progress each match, it's a duel that can be played endlessly
 - the match ends when the player clicks the lower centre "submit" button
 - Upon clicking the lower centre submit button, the lower submit button is replaced with a "Next Game" button. The "announcement board" will reveal how the player did, and the alias text at the bottom will reveal an answer. The submit button found at the player's card's section is temporarily disabled until the player clicks the "Next game button".
+- If the visitor clicks "switch gamemode" a confirmation box will appear, upon clicking "ok", the user will be sent to a new window, gamemode "normal"
 
+How to play
+------
+- Gamemode Normal follows the regular rules of Rock-Paper-Scissors in a best of 10 format.
+- Gamemode What expands on gamemode Normal, where you win by skill and not by luck. You figure out if a random emoji is a rock, a paper, or a scissors by playing the game for as many rounds as you need.
 
 Future features:
 ======
@@ -158,6 +103,15 @@ Colour scheme:
 - Highlights and announcements follow the theme colour.
 - The wallpaper has two shades of wine red, a colour that is both non-distracting and radiates personality. 
 
+
+Wireframes:
+======
+- NOTE: The appearance of emojis will vary depending on the operative system. The following examples feature Apple's emojis.
+
+- Visualisation for front-end appearance was sketched with art software.
+- The following images are wireframes to support as visual references during the early phase:
+![wireframe1]https://raw.githubusercontent.com/MidnattLantern/rock_paper_what/main/readme_images/wireframe1.png
+
 Technology
 ======
 - Development for all parts was done through a computer running macOS.
@@ -171,6 +125,44 @@ Technology
 - The social media icons were borrowed from Font Awesome.
 - Grammar checking was done by using Grammarly.
 
+Testing:
+======
+CSS jigsaw:
+------
+- https://jigsaw.w3.org/css-validator/
+- The CSS code was checked trough the CSS Jigsaw, here's how:
+- Click the 'by direct input' tab
+- Pase all of the CSS code, and click "check"
+- If there are any errors, the validator will reveal what line the warning is
+- As of version 4:th October 2023, there are no errors
+
+HTML validation:
+------
+- https://validator.w3.org
+- The HTML code was checked trough the HTML validator, here's how:
+- Click the 'Validate by direct input' tab
+- Paste all of the HTML code, and click "Check"
+- If there are any errorsm the validator will reveal what line the warning is
+- As of version 4:th October 2023, there are no errors
+
+JShint:
+- https://jshint.com
+- The Javascript code was checked trough the JSHint, here's how:
+- Erase all sample code
+- Paste all of the Javascript code
+- The right section of the website reveal warnings, and where to find the warning
+- Keep in mind: warnings are not errors, some warnings such as unused variables can be ignored
+- As of version 4:th October 2023, there are no errors
+
+Unsolved bugs:
+------
+- During gamemode "what", in extremely rare cases, the game will expect you to identify an alias emoji that isn't on the board.
+- Some browsers, such as Safari may not warn the visitor that they'll be switching gamemode. 
+
+Solves bugs:
+------
+- During gamemode "what", if the alias emoji is scissors, the game will announce "incorrect" even when the player is right. This has been fixed.
+
 Deployment
 ======
 
@@ -182,3 +174,13 @@ GitHub deployment:
 - When the master branch is selected, the page should provide a link to the website.
 - The repository link can be found here - https://github.com/MidnattLantern/rock_paper_what.git
 - The live link can be found here - https://midnattlantern.github.io/rock_paper_what/ 
+
+
+Credits:
+======
+- The social media icons appearing at the footer were borrowed from fontawesome.com.
+- The theme font is "Tilt Neon", borrowed from fonts.google.com.
+- The social media icons appearing in the footer were borrowed from fontawesome.com
+- The wallpaper was designed by the same developer behind Rock Paper What?
+- The how-to-play section was written by the same developer behind Rock Paper What, with a little help from GrammarlyGo for grammar and spelling checking.
+
