@@ -49,8 +49,33 @@ Solves bugs:
 - During gamemode "what", if the alias emoji is scissors, the game will announce "incorrect" even when the player is right. This has been fixed.
 
 Testing:
+======
+CSS jigsaw:
 ------
-- a version from the 28 of October passed the validator tests
+- https://jigsaw.w3.org/css-validator/
+- The CSS code was checked trough the CSS Jigsaw, here's how:
+- Click the 'by direct input' tab
+- Pase all of the CSS code, and click "check"
+- If there are any errors, the validator will reveal what line the warning is
+- As of version 4:th October 2023, there are no errors
+
+HTML validation:
+------
+- https://validator.w3.org
+- The HTML code was checked trough the HTML validator, here's how:
+- Click the 'Validate by direct input' tab
+- Paste all of the HTML code, and click "Check"
+- If there are any errorsm the validator will reveal what line the warning is
+- As of version 4:th October 2023, there are no errors
+
+JShint:
+- https://jshint.com
+- The Javascript code was checked trough the JSHint, here's how:
+- Erase all sample code
+- Paste all of the Javascript code
+- The right section of the website reveal warnings, and where to find the warning
+- Keep in mind: warnings are not errors, some warnings such as unused variables can be ignored
+- As of version 4:th October 2023, there are no errors
 
 Credits:
 ------
@@ -142,5 +167,5 @@ GitHub deployment:
 - In the GitHub repository, navigate to the settings tab, it looks like a cogwheel,
 - From the source section drop-down menu, select the master branch,
 - When the master branch is selected, the page should provide a link to the website.
-- The repository link can be found here - 
-- The live link can be found here - 
+- The repository link can be found here - https://github.com/MidnattLantern/rock_paper_what.git
+- The live link can be found here - https://midnattlantern.github.io/rock_paper_what/ 
